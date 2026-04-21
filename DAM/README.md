@@ -26,9 +26,6 @@ MM-AU # root of your MM-AU
 │           ├── images
 │               ├── 000001.jpg
 │               ├── ......
-│           ├── segmentations
-│               ├── 000001.jpg
-│               ├── ......
 │   ├── 2
 │   ├── ......
 │   ├── 62
@@ -37,9 +34,6 @@ MM-AU # root of your MM-AU
 │       ├── 001
 │           ├── images
 │               ├── 0001.png
-│               ├── ......
-│           ├── segmentations
-│               ├── 0001.jpg
 │               ├── ......
 │   ├── 2
 │   ├── ......
