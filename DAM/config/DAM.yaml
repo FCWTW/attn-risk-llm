@@ -11,6 +11,7 @@ best_weights: None
 model_params:
   img_size: [224,224]
   use_map: True
+  use_DBB: True
 
   transformer_params:
     add_and_norm: True

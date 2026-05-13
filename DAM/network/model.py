@@ -295,21 +295,21 @@ class CNN_PP_3D(nn.Module):
         img_folded = img_input.transpose(1, 2).contiguous().view(B*T, C, H, W)
 
         # (B, 4, 1, 1) -> (B, T, 4, 1, 1) -> (B*T, 4, 1, 1)
-        self.Pr = Pr_2d.unsqueeze(1).expand(B, T, cfg.num_filter_parameters, 1, 1).contiguous().view(B*T, cfg.num_filter_parameters, 1, 1)
+        Pr = Pr_2d.unsqueeze(1).expand(B, T, cfg.num_filter_parameters, 1, 1).contiguous().view(B*T, cfg.num_filter_parameters, 1, 1)
         self.filtered_image_batch = img_folded
 
         filters_op = [x(self, cfg) for x in cfg.filters]
-        self.filter_parameters = []
-        self.filtered_images = []
+        filter_parameters = []
+        filtered_images = []
 
         for j, filter_op in enumerate(filters_op):
-            self.filtered_image_batch, filter_parameter = filter_op.apply(self.filtered_image_batch, self.Pr)
-            self.filter_parameters.append(filter_parameter)
-            self.filtered_images.append(self.filtered_image_batch)
+            self.filtered_image_batch, filter_parameter = filter_op.apply(self.filtered_image_batch, Pr)
+            filter_parameters.append(filter_parameter)
+            filtered_images.append(self.filtered_image_batch)
             
         # (B*T, 3, H, W) -> (B, T, 3, H, W) -> (B, 3, T, H, W)
         final_output_3d = self.filtered_image_batch.view(B, T, C, H, W).transpose(1, 2).contiguous()
-        return final_output_3d, self.filtered_images, self.Pr, self.filter_parameters
+        return final_output_3d, filtered_images, Pr, filter_parameters
 
 class GatedFusionAdapter(nn.Module):
     def __init__(self, rgb_channels, seg_channels, out_channels):

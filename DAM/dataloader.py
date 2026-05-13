@@ -870,6 +870,7 @@ class BDDADataset_seg(DReyeVEDataset):
                  use_images=True,
                  task_attributes=None,
                  map_params=None,
+                 time_of_day='All',
                  **kwargs):
         
         super(BDDADataset_seg, self).__init__()
@@ -881,11 +882,12 @@ class BDDADataset_seg(DReyeVEDataset):
         self.task_attributes = task_attributes
         self.map_params = map_params
         self.use_images = use_images
+        self.time_of_day = time_of_day
 
         self.obs_length = obs_length
         self.mode = mode
         self.img_size = img_size
-        self.map_size = map_size 
+        self.map_size = map_size
 
         self.base_transform = transforms.Compose([
             transforms.Resize(img_size),
@@ -915,28 +917,46 @@ class BDDADataset_seg(DReyeVEDataset):
         if self.mode == "train":
             video_ids = list(set(os.listdir(os.path.join(self.dataset_path,'training','camera_frames'))) 
                         - set([str(x) for x in exclude_videos['training']]))
-
             self.data_path = os.path.join(self.dataset_path, 'training')
-
             self.step = self.obs_length//2
-            
+            clip_json_name = 'training.json'
         elif self.mode=="val":
             video_ids = list(set(os.listdir(os.path.join(self.dataset_path,'validation','camera_frames'))) 
                         - set([str(x) for x in exclude_videos['validation']]))
             self.data_path = os.path.join(self.dataset_path, 'validation')
-
             self.step = self.obs_length//2
+            clip_json_name = 'validation.json'
         else:
             video_ids = list(set(os.listdir(os.path.join(self.dataset_path,'test','camera_frames'))) 
                         - set([str(x) for x in exclude_videos['test']]))
             self.data_path = os.path.join(self.dataset_path, 'test')
-
             self.step = 1
+            clip_json_name = 'test.json'
+
+        clip_json_path = os.path.join(self.annot_path, clip_json_name)
+        
+        if os.path.exists(clip_json_path):
+            with open(clip_json_path, 'r') as f:
+                day_night_labels = json.load(f)
+                
+            if self.time_of_day != 'All':
+                filtered_ids = []
+                for vid in video_ids:
+                    vid_str = str(vid)
+                    if vid_str in day_night_labels:
+                        if day_night_labels[vid_str]['label'] == self.time_of_day:
+                            filtered_ids.append(vid)
+                
+                video_ids = filtered_ids
+                print(f"[{self.mode}] Successfully filtered {self.time_of_day} videos, retaining a total of {len(video_ids)} videos.")
+        else:
+            print(f"Failed to load {clip_json_path}...Training will proceed using the full dataset.")
 
         self.video_range = sorted([int(x) for x in video_ids])
         self.frame_num = {}
         for vid_id in self.video_range:
-            self.frame_num[int(vid_id)] = os.listdir(self.data_path)
+            vid_frames_dir = os.path.join(self.data_path, 'camera_frames', str(vid_id))
+            self.frame_num[int(vid_id)] = os.listdir(vid_frames_dir)
 
         self.load_data()
 
@@ -1029,7 +1049,7 @@ class BDDADataset_seg(DReyeVEDataset):
         os.makedirs(cache_dir, exist_ok=True)
         cached_filename = os.path.join(
             cache_dir,
-            f'{self.mode}_{self.dataset}_df.pkl'
+            f'{self.mode}_{self.dataset}_{self.time_of_day}_df.pkl'
         )
 
         print('-> Loading vehicle data...')

@@ -27,6 +27,7 @@ import torch.optim.lr_scheduler as lr_scheduler
 import pandas as pd
 from os.path import join
 from utils import get_task_attribute_dict
+import itertools
 
 from torchsummary import summary
 
@@ -94,39 +95,78 @@ class Train:
 
         np.random.seed(0)
         torch.manual_seed(0)
-      
-        train_dataset = dataset_class(self.model_params['clip_size'],
-                                       old_gt=False,
-                                       mode='train',
-                                       weight_type=self.train_params['weight_type'],
-                                       img_size=self.model_params['img_size'],
-                                       task_attributes=self.task_attributes,
-                                       map_params=self.map_params)
-        train_dataset.setup()
 
-        self.train_sample_weights = train_dataset.get_sample_weights()        
+        # Prepare training data loader
+        if self.model_params['use_DBB']:
+            print('-> Building Day and Night Datasets for Balanced Sampling...')
+            day_train_dataset = dataset_class(self.model_params['clip_size'],
+                                        old_gt=False,
+                                        mode='train',
+                                        weight_type=self.train_params['weight_type'],
+                                        img_size=self.model_params['img_size'],
+                                        task_attributes=self.task_attributes,
+                                        map_params=self.map_params,
+                                        time_of_day='Day')
+            day_train_dataset.setup()
 
-        if self.train_params['weighted_sampler']:
-            weighted_sampler = torch.utils.data.WeightedRandomSampler(self.train_sample_weights,
-                                                                      len(train_dataset), 
-                                                                      replacement=True)
+            night_train_dataset = dataset_class(self.model_params['clip_size'],
+                                        old_gt=False,
+                                        mode='train',
+                                        weight_type=self.train_params['weight_type'],
+                                        img_size=self.model_params['img_size'],
+                                        task_attributes=self.task_attributes,
+                                        map_params=self.map_params,
+                                        time_of_day='Night')
+            night_train_dataset.setup()
+
+            # half_batch_size = max(1, self.train_params['batch_size'] // 2)
+            total_bs = self.train_params['batch_size']
+            day_bs = max(1, int(total_bs * 0.75))
+            night_bs = max(1, total_bs - day_bs)
+
+            self.day_train_loader = torch.utils.data.DataLoader(day_train_dataset, 
+                                                            batch_size=day_bs,
+                                                            shuffle=True, 
+                                                            num_workers=self.train_params['no_workers'])
+            
+            self.night_train_loader = torch.utils.data.DataLoader(night_train_dataset, 
+                                                            batch_size=night_bs,
+                                                            shuffle=True, 
+                                                            num_workers=self.train_params['no_workers'])
         else:
-            weighted_sampler = None
-        
+            train_dataset = dataset_class(self.model_params['clip_size'],
+                                        old_gt=False,
+                                        mode='train',
+                                        weight_type=self.train_params['weight_type'],
+                                        img_size=self.model_params['img_size'],
+                                        task_attributes=self.task_attributes,
+                                        map_params=self.map_params)
+            train_dataset.setup()
+
+            self.train_sample_weights = train_dataset.get_sample_weights()
+            if self.train_params['weighted_sampler']:
+                weighted_sampler = torch.utils.data.WeightedRandomSampler(self.train_sample_weights,
+                                                                        len(train_dataset), 
+                                                                        replacement=True)
+            else:
+                weighted_sampler = None
+            
+            self.train_loader = torch.utils.data.DataLoader(train_dataset, 
+                                                            batch_size=self.train_params['batch_size'],
+                                                            shuffle=not self.train_params['weighted_sampler'], 
+                                                            sampler=weighted_sampler,
+                                                            num_workers=self.train_params['no_workers'])
+            
+        # Prepare validation data loader
         val_dataset = dataset_class(self.model_params['clip_size'],
-                                     old_gt=False,
-                                     mode='val',
-                                     weight_type=self.train_params['weight_type'],
-                                     img_size=self.model_params['img_size'],
-                                     task_attributes=self.task_attributes,
-                                     map_params=self.map_params)
+                                    old_gt=False,
+                                    mode='val',
+                                    weight_type=self.train_params['weight_type'],
+                                    img_size=self.model_params['img_size'],
+                                    task_attributes=self.task_attributes,
+                                    map_params=self.map_params)
         val_dataset.setup()
 
-        self.train_loader = torch.utils.data.DataLoader(train_dataset, 
-                                                        batch_size=self.train_params['batch_size'],
-                                                        shuffle=not self.train_params['weighted_sampler'], 
-                                                        sampler=weighted_sampler,
-                                                        num_workers=self.train_params['no_workers'])
         self.val_loader = torch.utils.data.DataLoader(val_dataset, 
                                                         batch_size=self.train_params['batch_size'], 
                                                         shuffle=False, 
@@ -153,30 +193,54 @@ class Train:
             shutil.copy(file, os.path.join(src_dir, file))
         shutil.copy(config_file, self.save_config)
 
-
     def load_config(self, config_file):
         with open(config_file, 'r') as fid:
             configs = yaml.safe_load(fid)
-
         return configs
 
     def train_epoch(self, epoch):
-
         self.model.train()
-        
         total_loss = AverageMeter()
         cur_loss = AverageMeter()
 
-        num_samples = len(self.train_loader)
-
         log_interval = self.train_params['log_interval']
 
-        with tqdm(self.train_loader, unit='batch', desc=f'Train epoch {epoch}/{self.train_params["no_epochs"]}') as tepoch:
-            for idx, sample in enumerate(tepoch):
-                img_clips = sample[0]
-                gt_sal = sample[1]
-                seg_img = sample[2]
-                vid_ids, frame_ids, sample_idx = [x.tolist() for x in sample[3]]
+        if self.model_params['use_DBB']:
+            train_iterator = zip(self.day_train_loader, itertools.cycle(self.night_train_loader))
+            num_samples = len(self.day_train_loader)
+        else:
+            train_iterator = self.train_loader
+            num_samples = len(self.train_loader)
+
+        original_total_steps = (len(self.day_train_loader.dataset) + len(self.night_train_loader.dataset)) // self.train_params['batch_size']
+
+        with tqdm(train_iterator, total=num_samples, unit='batch', desc=f'Train epoch {epoch}/{self.train_params["no_epochs"]}') as tepoch:
+            for idx, batch_data in enumerate(tepoch):
+                if self.model_params['use_DBB']:
+                    day_sample, night_sample = batch_data
+                    
+                    # Daytime
+                    day_img_clips, day_gt_sal, day_seg_img, day_info = day_sample
+                    day_vid_ids, day_frame_ids, day_sample_idx = [x.tolist() for x in day_info]
+                    
+                    # Night
+                    night_img_clips, night_gt_sal, night_seg_img, night_info = night_sample
+                    night_vid_ids, night_frame_ids, night_sample_idx = [x.tolist() for x in night_info]
+                    
+                    # Concatenate tensors in the Batch dimension
+                    img_clips = torch.cat([day_img_clips, night_img_clips], dim=0)
+                    gt_sal = torch.cat([day_gt_sal, night_gt_sal], dim=0)
+                    seg_img = torch.cat([day_seg_img, night_seg_img], dim=0)
+                    vid_ids = day_vid_ids + night_vid_ids
+                    frame_ids = day_frame_ids + night_frame_ids
+                    sample_idx = day_sample_idx + night_sample_idx
+                    
+                else:
+                    sample = batch_data
+                    img_clips = sample[0]
+                    gt_sal = sample[1]
+                    seg_img = sample[2]
+                    vid_ids, frame_ids, sample_idx = [x.tolist() for x in sample[3]]
 
                 # print('\n\n\nsample size', img_clips.shape)
                 # print('segmentation size', seg_img.shape)
@@ -195,10 +259,10 @@ class Train:
 
                 assert pred_sal.size() == gt_sal.size()
 
-                if self.train_params['weighted_loss']:
+                if self.train_params['weighted_loss'] and not self.model_params.get('use_DBB', False):
                     weights = [self.train_sample_weights[x] for x in sample_idx]
                 else:
-                    weights = [1]*pred_sal.shape[0]
+                    weights = [1] * pred_sal.shape[0]
 
                 weights = torch.tensor(weights, dtype=torch.float32).to(self.device)
                 loss = loss_func(pred_sal, gt_sal, weights, self.train_params)
@@ -208,10 +272,14 @@ class Train:
                 #     if param.grad is not None:
                 #         print(f"{name} grad norm: {param.grad.norm()}")
                 self.optimizer.step()
+
+                if idx >= original_total_steps - 1:
+                    break
+
                 total_loss.update(loss.item())
                 cur_loss.update(loss.item())
 
-                if idx%log_interval==(log_interval-1):
+                if idx % log_interval == (log_interval - 1):
                     tepoch.set_postfix_str(f'Loss: {cur_loss.avg:0.3f}')
                     cur_loss.reset()
                 
@@ -286,7 +354,7 @@ class Train:
                 if val_loss < best_loss:
                     best_loss = val_loss
                     best_epoch = epoch
-                    best_model = copy.deepcopy(self.model)
+                    # best_model = copy.deepcopy(self.model)
                     model_save_name=f'checkpoint_{epoch}.pt'
                     best_model_save_name = model_save_name
                     print(f'-> Saved {model_save_name}')

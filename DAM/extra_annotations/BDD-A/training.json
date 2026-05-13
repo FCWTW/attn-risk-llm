@@ -1,0 +1,3815 @@
+{
+    "1718": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1531": {
+        "label": "Night",
+        "confidence": 0.974
+    },
+    "958": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1182": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "22": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "784": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "368": {
+        "label": "Day",
+        "confidence": 0.9974
+    },
+    "520": {
+        "label": "Day",
+        "confidence": 0.9971
+    },
+    "105": {
+        "label": "Night",
+        "confidence": 0.9694
+    },
+    "1176": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "74": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "523": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "1528": {
+        "label": "Day",
+        "confidence": 0.9971
+    },
+    "1298": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "370": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "817": {
+        "label": "Night",
+        "confidence": 0.9847
+    },
+    "1418": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "699": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1360": {
+        "label": "Night",
+        "confidence": 0.9956,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1500": {
+        "label": "Night",
+        "confidence": 0.8232,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "835": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "12": {
+        "label": "Night",
+        "confidence": 0.9499,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1516": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "82": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "223": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "877": {
+        "label": "Night",
+        "confidence": 0.9478,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "635": {
+        "label": "Day",
+        "confidence": 0.9972
+    },
+    "473": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1541": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "293": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "32": {
+        "label": "Day",
+        "confidence": 0.9943
+    },
+    "1567": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1444": {
+        "label": "Night",
+        "confidence": 0.9972,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "286": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1584": {
+        "label": "Night",
+        "confidence": 0.9984,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "865": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "659": {
+        "label": "Day",
+        "confidence": 0.9956
+    },
+    "439": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1333": {
+        "label": "Night",
+        "confidence": 0.9964,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1442": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "862": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1393": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "1679": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1415": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "325": {
+        "label": "Night",
+        "confidence": 0.9997,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1024": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1185": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "985": {
+        "label": "Day",
+        "confidence": 0.9946
+    },
+    "406": {
+        "label": "Day",
+        "confidence": 0.9888
+    },
+    "178": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "597": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "732": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "1121": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1071": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "164": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1515": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "461": {
+        "label": "Day",
+        "confidence": 0.9961
+    },
+    "422": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "300": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1585": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1625": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "470": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "248": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1025": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "29": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "155": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "146": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "99": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1342": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "953": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "752": {
+        "label": "Night",
+        "confidence": 0.9985,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "127": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "148": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "834": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "965": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1212": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1225": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "999": {
+        "label": "Day",
+        "confidence": 0.9896
+    },
+    "733": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "608": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "465": {
+        "label": "Day",
+        "confidence": 0.9972
+    },
+    "1106": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1238": {
+        "label": "Night",
+        "confidence": 0.9979,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "895": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "102": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "124": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1638": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1230": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "469": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "507": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "754": {
+        "label": "Night",
+        "confidence": 0.98,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "746": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "590": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "854": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1602": {
+        "label": "Day",
+        "confidence": 0.9967
+    },
+    "696": {
+        "label": "Night",
+        "confidence": 0.9954,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "245": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1489": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1319": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "94": {
+        "label": "Day",
+        "confidence": 0.9966
+    },
+    "145": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "836": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "64": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "434": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "842": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1545": {
+        "label": "Night",
+        "confidence": 0.9993,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "496": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "720": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1313": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "56": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "814": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1741": {
+        "label": "Night",
+        "confidence": 0.9455,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "457": {
+        "label": "Day",
+        "confidence": 0.9956
+    },
+    "1559": {
+        "label": "Night",
+        "confidence": 0.9992,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1411": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "430": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "1306": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "957": {
+        "label": "Night",
+        "confidence": 0.9875,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1729": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "1068": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "44": {
+        "label": "Day",
+        "confidence": 0.9954
+    },
+    "652": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1609": {
+        "label": "Day",
+        "confidence": 0.9967
+    },
+    "1069": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1243": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1090": {
+        "label": "Day",
+        "confidence": 0.9963
+    },
+    "1659": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "853": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "529": {
+        "label": "Night",
+        "confidence": 0.9637,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "821": {
+        "label": "Night",
+        "confidence": 0.998,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1117": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1281": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "287": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "1657": {
+        "label": "Day",
+        "confidence": 0.9766
+    },
+    "1004": {
+        "label": "Night",
+        "confidence": 0.9993,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1077": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "1371": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "331": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "62": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "1289": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "666": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1102": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1271": {
+        "label": "Day",
+        "confidence": 0.9963
+    },
+    "278": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1224": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "432": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1484": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1126": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "78": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "352": {
+        "label": "Night",
+        "confidence": 0.999,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1582": {
+        "label": "Night",
+        "confidence": 0.9967,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "641": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "262": {
+        "label": "Night",
+        "confidence": 0.9777
+    },
+    "361": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1153": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "363": {
+        "label": "Night",
+        "confidence": 0.995,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "880": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "283": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "940": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "405": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "279": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1395": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1530": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1639": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "937": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "35": {
+        "label": "Day",
+        "confidence": 0.994
+    },
+    "481": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "1711": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "926": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "889": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "462": {
+        "label": "Night",
+        "confidence": 0.9681,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1163": {
+        "label": "Day",
+        "confidence": 0.9963
+    },
+    "1064": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "521": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "234": {
+        "label": "Day",
+        "confidence": 0.9906
+    },
+    "280": {
+        "label": "Day",
+        "confidence": 0.991
+    },
+    "47": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "61": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "758": {
+        "label": "Night",
+        "confidence": 0.9611,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "717": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1067": {
+        "label": "Day",
+        "confidence": 0.9976
+    },
+    "1022": {
+        "label": "Day",
+        "confidence": 0.9951
+    },
+    "346": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "1356": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "904": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "782": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "893": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "111": {
+        "label": "Day",
+        "confidence": 0.9974
+    },
+    "218": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "389": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "1056": {
+        "label": "Day",
+        "confidence": 0.9775
+    },
+    "886": {
+        "label": "Night",
+        "confidence": 0.9922,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1721": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "1299": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "415": {
+        "label": "Day",
+        "confidence": 0.9972
+    },
+    "1039": {
+        "label": "Day",
+        "confidence": 0.9839
+    },
+    "1677": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "1361": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1171": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "1156": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1428": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "72": {
+        "label": "Day",
+        "confidence": 0.9954
+    },
+    "1161": {
+        "label": "Day",
+        "confidence": 0.9959
+    },
+    "227": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "83": {
+        "label": "Day",
+        "confidence": 0.9914
+    },
+    "1434": {
+        "label": "Night",
+        "confidence": 0.9964,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1499": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1099": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "3": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "79": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1075": {
+        "label": "Night",
+        "confidence": 0.9622,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "873": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "451": {
+        "label": "Night",
+        "confidence": 0.9985,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1519": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "1096": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "562": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1221": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "126": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "941": {
+        "label": "Night",
+        "confidence": 0.9987,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "974": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "365": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1388": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "967": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "648": {
+        "label": "Day",
+        "confidence": 0.8604
+    },
+    "1448": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "137": {
+        "label": "Day",
+        "confidence": 0.9963
+    },
+    "202": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "786": {
+        "label": "Night",
+        "confidence": 0.9325,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "581": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "979": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1247": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "997": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "988": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "1379": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1483": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "637": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1234": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1512": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "455": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "168": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "640": {
+        "label": "Day",
+        "confidence": 0.9139
+    },
+    "1672": {
+        "label": "Day",
+        "confidence": 0.9954
+    },
+    "1346": {
+        "label": "Night",
+        "confidence": 0.9959,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "579": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "1357": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "315": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1455": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "250": {
+        "label": "Night",
+        "confidence": 0.9746
+    },
+    "824": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "489": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "1704": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "768": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1272": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1052": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1691": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "1188": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "948": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "751": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1511": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1168": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1622": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1359": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "508": {
+        "label": "Night",
+        "confidence": 0.9958,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1665": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "263": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "141": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1297": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1268": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1520": {
+        "label": "Day",
+        "confidence": 0.9889
+    },
+    "519": {
+        "label": "Night",
+        "confidence": 0.9937,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "861": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "10": {
+        "label": "Day",
+        "confidence": 0.9928
+    },
+    "1480": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "729": {
+        "label": "Night",
+        "confidence": 0.7396
+    },
+    "1186": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "54": {
+        "label": "Night",
+        "confidence": 0.6309,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1040": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1385": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1632": {
+        "label": "Day",
+        "confidence": 0.9954
+    },
+    "631": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "357": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "1630": {
+        "label": "Day",
+        "confidence": 0.9976
+    },
+    "1235": {
+        "label": "Day",
+        "confidence": 0.9829
+    },
+    "832": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "1629": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1685": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "152": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "825": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "296": {
+        "label": "Day",
+        "confidence": 0.9878
+    },
+    "479": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1129": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1291": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "920": {
+        "label": "Day",
+        "confidence": 0.9961
+    },
+    "1287": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "114": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1552": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "936": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1432": {
+        "label": "Night",
+        "confidence": 0.9775,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1209": {
+        "label": "Night",
+        "confidence": 0.612,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "547": {
+        "label": "Night",
+        "confidence": 0.9904,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "978": {
+        "label": "Day",
+        "confidence": 0.9971
+    },
+    "1326": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "870": {
+        "label": "Day",
+        "confidence": 0.9945
+    },
+    "599": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "136": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "750": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "636": {
+        "label": "Day",
+        "confidence": 0.9932
+    },
+    "161": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1457": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "701": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "373": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "671": {
+        "label": "Night",
+        "confidence": 0.9032,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "711": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "708": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "813": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1470": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "181": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "490": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "871": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1353": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1256": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1284": {
+        "label": "Night",
+        "confidence": 0.9979,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "638": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1532": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "45": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1136": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1351": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "1084": {
+        "label": "Night",
+        "confidence": 0.9914,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "676": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "383": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "745": {
+        "label": "Night",
+        "confidence": 0.9925,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1111": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "347": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1199": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "131": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "235": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "392": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1320": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "572": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1347": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "476": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1220": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "106": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1100": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "474": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "776": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "113": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "891": {
+        "label": "Night",
+        "confidence": 0.9995,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "856": {
+        "label": "Day",
+        "confidence": 0.9974
+    },
+    "1640": {
+        "label": "Night",
+        "confidence": 0.9998,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "433": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "129": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "688": {
+        "label": "Day",
+        "confidence": 0.9912
+    },
+    "647": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1544": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1606": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "229": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1149": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "1314": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1443": {
+        "label": "Night",
+        "confidence": 0.9855,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "826": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "844": {
+        "label": "Night",
+        "confidence": 0.9933,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "176": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "604": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "766": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1233": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1184": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1155": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "892": {
+        "label": "Day",
+        "confidence": 0.9971
+    },
+    "139": {
+        "label": "Night",
+        "confidence": 0.9788
+    },
+    "1329": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "866": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1157": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "175": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "277": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "906": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "471": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1016": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1076": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "395": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "427": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1553": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1433": {
+        "label": "Night",
+        "confidence": 0.9984,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1162": {
+        "label": "Night",
+        "confidence": 0.9971,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "567": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1497": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1594": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "611": {
+        "label": "Day",
+        "confidence": 0.9901
+    },
+    "65": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "931": {
+        "label": "Day",
+        "confidence": 0.9933
+    },
+    "107": {
+        "label": "Day",
+        "confidence": 0.9963
+    },
+    "1309": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "777": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1728": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "423": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "201": {
+        "label": "Day",
+        "confidence": 0.9976
+    },
+    "672": {
+        "label": "Night",
+        "confidence": 0.9982,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1408": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "408": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "714": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "239": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1715": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "376": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1158": {
+        "label": "Day",
+        "confidence": 0.9953
+    },
+    "550": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1175": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "226": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "350": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1059": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "237": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "379": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1734": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1348": {
+        "label": "Night",
+        "confidence": 0.9814
+    },
+    "1285": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "482": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "556": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "120": {
+        "label": "Day",
+        "confidence": 0.9915
+    },
+    "574": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "291": {
+        "label": "Day",
+        "confidence": 0.9969
+    },
+    "739": {
+        "label": "Day",
+        "confidence": 0.9966
+    },
+    "1708": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1050": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1507": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "585": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "314": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "356": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "411": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "864": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "34": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "380": {
+        "label": "Night",
+        "confidence": 0.9836,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "916": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1612": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "910": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "303": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "316": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1537": {
+        "label": "Night",
+        "confidence": 0.9977,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "163": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1738": {
+        "label": "Night",
+        "confidence": 0.7965,
+        "__note__": "CLIP predict Day"
+    },
+    "684": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "169": {
+        "label": "Night",
+        "confidence": 0.9435,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1027": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "13": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "788": {
+        "label": "Night",
+        "confidence": 0.999,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "446": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "772": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "606": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1145": {
+        "label": "Night",
+        "confidence": 0.6743,
+        "__note__": "CLIP predict Day"
+    },
+    "188": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1533": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "359": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "353": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "621": {
+        "label": "Night",
+        "confidence": 0.8464
+    },
+    "194": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1733": {
+        "label": "Night",
+        "confidence": 0.9976,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1550": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1237": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "358": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "653": {
+        "label": "Day",
+        "confidence": 0.9969
+    },
+    "882": {
+        "label": "Night",
+        "confidence": 0.991,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "450": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "614": {
+        "label": "Night",
+        "confidence": 0.966,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1258": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "690": {
+        "label": "Night",
+        "confidence": 0.9884,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1477": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "290": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "669": {
+        "label": "Day",
+        "confidence": 0.9972
+    },
+    "1440": {
+        "label": "Day",
+        "confidence": 0.9749
+    },
+    "1707": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "217": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "661": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1270": {
+        "label": "Day",
+        "confidence": 0.9974
+    },
+    "426": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "820": {
+        "label": "Night",
+        "confidence": 0.8717,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1414": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1407": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1680": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "345": {
+        "label": "Day",
+        "confidence": 0.9974
+    },
+    "309": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1046": {
+        "label": "Day",
+        "confidence": 0.9953
+    },
+    "431": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "849": {
+        "label": "Night",
+        "confidence": 0.6942,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1197": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1200": {
+        "label": "Night",
+        "confidence": 0.9954,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1311": {
+        "label": "Day",
+        "confidence": 0.9961
+    },
+    "206": {
+        "label": "Night",
+        "confidence": 0.9689
+    },
+    "475": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "811": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "2": {
+        "label": "Day",
+        "confidence": 0.9961
+    },
+    "1383": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1730": {
+        "label": "Day",
+        "confidence": 0.9969
+    },
+    "321": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1688": {
+        "label": "Night",
+        "confidence": 0.9938,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "231": {
+        "label": "Day",
+        "confidence": 0.9972
+    },
+    "221": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "387": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "266": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "246": {
+        "label": "Day",
+        "confidence": 0.9966
+    },
+    "253": {
+        "label": "Day",
+        "confidence": 0.9946
+    },
+    "1142": {
+        "label": "Day",
+        "confidence": 0.9948
+    },
+    "272": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1598": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1214": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "925": {
+        "label": "Night",
+        "confidence": 0.891,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "374": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1366": {
+        "label": "Day",
+        "confidence": 0.9956
+    },
+    "1569": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "337": {
+        "label": "Night",
+        "confidence": 0.9956,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "747": {
+        "label": "Night",
+        "confidence": 0.9901,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "222": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1219": {
+        "label": "Day",
+        "confidence": 0.9409
+    },
+    "905": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1092": {
+        "label": "Day",
+        "confidence": 0.9963
+    },
+    "1522": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "613": {
+        "label": "Night",
+        "confidence": 0.9984,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1341": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "247": {
+        "label": "Night",
+        "confidence": 0.9217,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "589": {
+        "label": "Night",
+        "confidence": 0.8732,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "153": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "850": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "494": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "11": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "857": {
+        "label": "Night",
+        "confidence": 0.9982,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1091": {
+        "label": "Day",
+        "confidence": 0.9966
+    },
+    "1173": {
+        "label": "Night",
+        "confidence": 0.7267,
+        "__note__": "CLIP predict Day"
+    },
+    "1658": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "228": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1605": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "362": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "109": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1720": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "339": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1735": {
+        "label": "Day",
+        "confidence": 0.995
+    },
+    "723": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1426": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "366": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "670": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "329": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "1246": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "484": {
+        "label": "Day",
+        "confidence": 0.9966
+    },
+    "1227": {
+        "label": "Day",
+        "confidence": 0.9961
+    },
+    "1178": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1253": {
+        "label": "Night",
+        "confidence": 0.9985,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1668": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "364": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1586": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1615": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "419": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "502": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "612": {
+        "label": "Night",
+        "confidence": 0.9766,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "513": {
+        "label": "Day",
+        "confidence": 0.8145
+    },
+    "18": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1128": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "592": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "468": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1490": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1327": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "1236": {
+        "label": "Day",
+        "confidence": 0.9943
+    },
+    "90": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "982": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "763": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "896": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1135": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1018": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "323": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "252": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1119": {
+        "label": "Night",
+        "confidence": 0.9144,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1105": {
+        "label": "Night",
+        "confidence": 0.9686
+    },
+    "244": {
+        "label": "Day",
+        "confidence": 0.9604
+    },
+    "1422": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "716": {
+        "label": "Day",
+        "confidence": 0.9948
+    },
+    "1244": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "1523": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "1006": {
+        "label": "Day",
+        "confidence": 0.9945
+    },
+    "975": {
+        "label": "Night",
+        "confidence": 0.9928,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "929": {
+        "label": "Night",
+        "confidence": 0.9972,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1617": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "243": {
+        "label": "Day",
+        "confidence": 0.9956
+    },
+    "1454": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "386": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "5": {
+        "label": "Day",
+        "confidence": 0.617
+    },
+    "1154": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "761": {
+        "label": "Night",
+        "confidence": 0.9144,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "568": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "306": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1115": {
+        "label": "Night",
+        "confidence": 0.9992,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1596": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "667": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1036": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "73": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "1381": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "780": {
+        "label": "Night",
+        "confidence": 0.998,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "566": {
+        "label": "Day",
+        "confidence": 0.9963
+    },
+    "30": {
+        "label": "Night",
+        "confidence": 0.9985,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "968": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "255": {
+        "label": "Night",
+        "confidence": 0.9972,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1736": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "4": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "428": {
+        "label": "Day",
+        "confidence": 0.9974
+    },
+    "1273": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "924": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1430": {
+        "label": "Day",
+        "confidence": 0.9956
+    },
+    "322": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1687": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1399": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "256": {
+        "label": "Night",
+        "confidence": 0.9958,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "561": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1218": {
+        "label": "Night",
+        "confidence": 0.8542,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "737": {
+        "label": "Night",
+        "confidence": 0.7834,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1023": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "348": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1279": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "828": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1555": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "71": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "712": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1678": {
+        "label": "Day",
+        "confidence": 0.995
+    },
+    "827": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1044": {
+        "label": "Day",
+        "confidence": 0.9972
+    },
+    "1116": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "410": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "264": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "1127": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1160": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "656": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "878": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "833": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "794": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1487": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "60": {
+        "label": "Day",
+        "confidence": 0.9967
+    },
+    "1305": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "993": {
+        "label": "Night",
+        "confidence": 0.9574
+    },
+    "369": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "198": {
+        "label": "Night",
+        "confidence": 0.9945,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1397": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "527": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1518": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "731": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "564": {
+        "label": "Night",
+        "confidence": 0.9982,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "930": {
+        "label": "Night",
+        "confidence": 0.9967,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "59": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "914": {
+        "label": "Day",
+        "confidence": 0.9855
+    },
+    "454": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "301": {
+        "label": "Night",
+        "confidence": 0.9507,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "673": {
+        "label": "Night",
+        "confidence": 0.9924,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "340": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "31": {
+        "label": "Day",
+        "confidence": 0.9938
+    },
+    "1009": {
+        "label": "Night",
+        "confidence": 0.9808,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "980": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "453": {
+        "label": "Night",
+        "confidence": 0.991,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "524": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "793": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "702": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1302": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "622": {
+        "label": "Day",
+        "confidence": 0.9907
+    },
+    "51": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1108": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "183": {
+        "label": "Day",
+        "confidence": 0.9935
+    },
+    "1698": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "994": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1032": {
+        "label": "Night",
+        "confidence": 0.578,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "195": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "625": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "863": {
+        "label": "Day",
+        "confidence": 0.9974
+    },
+    "403": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "69": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1510": {
+        "label": "Night",
+        "confidence": 0.9977,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "634": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1634": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1020": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "655": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "304": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "1647": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1323": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "1713": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1652": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "413": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "989": {
+        "label": "Night",
+        "confidence": 0.993,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "624": {
+        "label": "Day",
+        "confidence": 0.9709
+    },
+    "539": {
+        "label": "Day",
+        "confidence": 0.9969
+    },
+    "759": {
+        "label": "Night",
+        "confidence": 0.862,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "949": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "660": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1709": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1549": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "1387": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1029": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "443": {
+        "label": "Day",
+        "confidence": 0.9468
+    },
+    "1193": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1058": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1104": {
+        "label": "Day",
+        "confidence": 0.9953
+    },
+    "147": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "288": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1739": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "63": {
+        "label": "Night",
+        "confidence": 0.9549,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1590": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "779": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1094": {
+        "label": "Day",
+        "confidence": 0.9972
+    },
+    "230": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "774": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1603": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "950": {
+        "label": "Night",
+        "confidence": 0.9839
+    },
+    "600": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1316": {
+        "label": "Day",
+        "confidence": 0.9591
+    },
+    "601": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "173": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1264": {
+        "label": "Day",
+        "confidence": 0.9932
+    },
+    "1565": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "448": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1654": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1712": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1429": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "174": {
+        "label": "Night",
+        "confidence": 0.9546,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1352": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "760": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1494": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "815": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1675": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1527": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "259": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1263": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1295": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1401": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1277": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1435": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1642": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "125": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1409": {
+        "label": "Night",
+        "confidence": 0.9969,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "522": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1447": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1344": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "1000": {
+        "label": "Day",
+        "confidence": 0.9821
+    },
+    "1330": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1700": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1396": {
+        "label": "Day",
+        "confidence": 0.9948
+    },
+    "571": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "38": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "378": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "269": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "868": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "725": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "1066": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "429": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "845": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1701": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "159": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1259": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1538": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "1539": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "388": {
+        "label": "Night",
+        "confidence": 0.9823,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "501": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "609": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "583": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "76": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "580": {
+        "label": "Night",
+        "confidence": 0.9946,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1604": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1337": {
+        "label": "Day",
+        "confidence": 0.9912
+    },
+    "40": {
+        "label": "Night",
+        "confidence": 0.9995,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "681": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1228": {
+        "label": "Day",
+        "confidence": 0.9761
+    },
+    "933": {
+        "label": "Day",
+        "confidence": 0.9917
+    },
+    "1726": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1492": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1600": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "923": {
+        "label": "Day",
+        "confidence": 0.9961
+    },
+    "1252": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "17": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "900": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "951": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "558": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1293": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1610": {
+        "label": "Night",
+        "confidence": 0.9884,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "166": {
+        "label": "Day",
+        "confidence": 0.9948
+    },
+    "1021": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "20": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "851": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1543": {
+        "label": "Day",
+        "confidence": 0.9963
+    },
+    "584": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "687": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "354": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "196": {
+        "label": "Day",
+        "confidence": 0.9888
+    },
+    "190": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "184": {
+        "label": "Day",
+        "confidence": 0.9967
+    },
+    "602": {
+        "label": "Day",
+        "confidence": 0.9969
+    },
+    "15": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1308": {
+        "label": "Day",
+        "confidence": 0.9974
+    },
+    "642": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1482": {
+        "label": "Day",
+        "confidence": 0.9972
+    },
+    "367": {
+        "label": "Day",
+        "confidence": 0.994
+    },
+    "668": {
+        "label": "Night",
+        "confidence": 0.9943,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "932": {
+        "label": "Night",
+        "confidence": 0.89,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "908": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "837": {
+        "label": "Night",
+        "confidence": 0.979,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1375": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1714": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "875": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1696": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "1131": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "620": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1684": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1202": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1506": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "569": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "695": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "156": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "796": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "375": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "902": {
+        "label": "Night",
+        "confidence": 0.9933,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1392": {
+        "label": "Day",
+        "confidence": 0.9959
+    },
+    "595": {
+        "label": "Day",
+        "confidence": 0.9963
+    },
+    "1391": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "349": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "598": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1587": {
+        "label": "Day",
+        "confidence": 0.9964
+    },
+    "1521": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "709": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "1354": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "273": {
+        "label": "Day",
+        "confidence": 0.9979
+    },
+    "134": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1725": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1542": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1124": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "596": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "449": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "215": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1245": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "200": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "765": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "663": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "305": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "23": {
+        "label": "Day",
+        "confidence": 0.998
+    },
+    "915": {
+        "label": "Night",
+        "confidence": 0.9977,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "447": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1159": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "959": {
+        "label": "Night",
+        "confidence": 0.9924,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "859": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "285": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "177": {
+        "label": "Day",
+        "confidence": 0.9897
+    },
+    "511": {
+        "label": "Day",
+        "confidence": 0.9974
+    },
+    "151": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1028": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "485": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "576": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1451": {
+        "label": "Night",
+        "confidence": 0.5869
+    },
+    "1690": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1667": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "1660": {
+        "label": "Day",
+        "confidence": 0.9976
+    },
+    "1255": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1343": {
+        "label": "Night",
+        "confidence": 0.9961,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "1561": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "728": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1134": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1082": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1310": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "500": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1643": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "698": {
+        "label": "Day",
+        "confidence": 0.9938
+    },
+    "1693": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1260": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "586": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "1472": {
+        "label": "Day",
+        "confidence": 0.995
+    },
+    "1554": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1464": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "741": {
+        "label": "Day",
+        "confidence": 0.9966
+    },
+    "1005": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "858": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "658": {
+        "label": "Night",
+        "confidence": 0.9707,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "632": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "1081": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1080": {
+        "label": "Night",
+        "confidence": 0.9668
+    },
+    "162": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "268": {
+        "label": "Day",
+        "confidence": 0.9937
+    },
+    "790": {
+        "label": "Day",
+        "confidence": 0.9888
+    },
+    "534": {
+        "label": "Day",
+        "confidence": 0.9946
+    },
+    "118": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1471": {
+        "label": "Night",
+        "confidence": 0.9993,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "740": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "713": {
+        "label": "Day",
+        "confidence": 0.9788
+    },
+    "52": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1130": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "934": {
+        "label": "Day",
+        "confidence": 0.9993
+    },
+    "1304": {
+        "label": "Day",
+        "confidence": 0.9976
+    },
+    "1623": {
+        "label": "Day",
+        "confidence": 0.9971
+    },
+    "394": {
+        "label": "Night",
+        "confidence": 0.9977,
+        "__note__": "CLIP predict Day, but it's evening"
+    },
+    "271": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "1624": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "901": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "458": {
+        "label": "Day",
+        "confidence": 0.9984
+    },
+    "420": {
+        "label": "Day",
+        "confidence": 0.9987
+    },
+    "1398": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "927": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "1513": {
+        "label": "Day",
+        "confidence": 0.995
+    },
+    "1095": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1607": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1536": {
+        "label": "Day",
+        "confidence": 1.0
+    },
+    "28": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "694": {
+        "label": "Day",
+        "confidence": 0.9966
+    },
+    "1556": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "478": {
+        "label": "Day",
+        "confidence": 0.9976
+    },
+    "1093": {
+        "label": "Day",
+        "confidence": 0.9985
+    },
+    "1217": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "685": {
+        "label": "Day",
+        "confidence": 0.979
+    },
+    "165": {
+        "label": "Day",
+        "confidence": 0.9937
+    },
+    "1079": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "1065": {
+        "label": "Night",
+        "confidence": 0.9657
+    },
+    "1189": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1649": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1449": {
+        "label": "Day",
+        "confidence": 0.9995
+    },
+    "1529": {
+        "label": "Night",
+        "confidence": 0.9969,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1656": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "117": {
+        "label": "Day",
+        "confidence": 0.9992
+    },
+    "756": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "122": {
+        "label": "Day",
+        "confidence": 0.9989
+    },
+    "778": {
+        "label": "Day",
+        "confidence": 0.999
+    },
+    "749": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "935": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "251": {
+        "label": "Day",
+        "confidence": 0.9969
+    },
+    "734": {
+        "label": "Day",
+        "confidence": 0.9998
+    },
+    "1562": {
+        "label": "Day",
+        "confidence": 0.9951
+    },
+    "907": {
+        "label": "Day",
+        "confidence": 0.9972
+    },
+    "748": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "499": {
+        "label": "Night",
+        "confidence": 0.9839,
+        "__note__": "CLIP predict Day, but it's early morning"
+    },
+    "1576": {
+        "label": "Day",
+        "confidence": 0.9997
+    },
+    "27": {
+        "label": "Day",
+        "confidence": 0.9977
+    },
+    "966": {
+        "label": "Day",
+        "confidence": 0.9982
+    },
+    "491": {
+        "label": "Day",
+        "confidence": 0.9972
+    }
+}

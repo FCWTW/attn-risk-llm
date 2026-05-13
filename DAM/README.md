@@ -5,6 +5,7 @@
 # Paths to the datasets and DAM code
 export DREYEVE_PATH="/home/wayne/Documents/DREYEVE_DATA"
 export BDDA_PATH="/home/wayne/Documents/BDDA"
+export EXTRA_ANNOT_PATH="/home/wayne/Documents/Progress/SCOUT/extra_annotations"
 export CODE_FOLDER="/home/wayne/Documents/Progress/SCOUT"
 ```
 2. The required packages are listed in the environment.yaml file. The model was originally trained on an NVIDIA GeForce RTX 4090 using Python 3.8, PyTorch 2.0.0, CUDA 11.8, and cuDNN 8.7.0.
