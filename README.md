@@ -38,6 +38,9 @@ python3 test.py --config_dir /your_config --evaluate --save_images
 
 ### Visualize the results
 You can use [get_heatmap.py]() to get the visual heatmap of driver attention.
+```bash
+python3 get_heatmap.py --gazemap_dir /gazemap --rgb_dir /camera_frames --output_dir /your_output
+```
 
 ### Inference on MM-AU dataset
 You must first follow the [steps]() before executing the following command:
