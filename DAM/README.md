@@ -10,11 +10,11 @@ export CODE_FOLDER="/home/wayne/Documents/Progress/SCOUT"
 ```
 2. The required packages are listed in the environment.yaml file. The model was originally trained on an NVIDIA GeForce RTX 4090 using Python 3.8, PyTorch 2.0.0, CUDA 11.8, and cuDNN 8.7.0.
 
-3. The weights pre-trained on BDDA can be found [here]().
+3. The weights pre-trained on BDDA can be found [here](https://drive.google.com/file/d/1RCpoOry9epnHwKJ6pTBhQxXmKaE5LUkG/view?usp=drive_link).
 
-4. You can modify the model type, dataset type, and training parameters in [/config/DAM.yaml]().
+4. You can modify the model type, dataset type, and training parameters in [/config/DAM.yaml](/DAM/config/DAM.yaml).
 
-5. Before training or testing, you need to process the BDDA dataset using [mmsegmentation]().
+5. Before training or testing, you need to process the BDDA dataset using [mmsegmentation](/mmsegmentation/process_BDDA.py).
 
 ---
 ## Prepare for MM-AU dataset
@@ -42,6 +42,6 @@ MM-AU # root of your MM-AU
 ```
 1. Please organize the dataset according to the above structure.
 
-2. Next, use [/mmsegmentation/process_MMAU.py]() to generate a semantic segmentation map of the dataset.
+2. Next, use [/mmsegmentation/process_MMAU.py](/mmsegmentation/process_MMAU.py) to generate a semantic segmentation map of the dataset.
 
-3. Eventually, use [MMAU_inference.py]() to perform DAM inference.
+3. Eventually, use [MMAU_inference.py](/DAM/scripts/MMAU_inference.py) to perform DAM inference.
