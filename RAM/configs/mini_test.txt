@@ -1,0 +1,810 @@
+1/022 1 15 164 137,ego-car goes straight in the blind spot area
+1/022 1 6 155 137,ego-car goes straight in the blind spot area
+1/022 1 9 158 137,ego-car goes straight in the blind spot area
+1/022 1 4 153 137,ego-car goes straight in the blind spot area
+1/022 1 0 149 137,ego-car goes straight in the blind spot area
+1/024 1 83 232 208,a pedestrian crosses the road
+1/024 1 67 216 208,a pedestrian crosses the road
+1/024 1 87 236 208,a pedestrian crosses the road
+1/026 1 0 149 91,a pedestrian crosses the road
+1/027 1 18 167 139,ego-car goes straight crossing paths at non-signalized junctions
+1/027 1 5 154 139,ego-car goes straight crossing paths at non-signalized junctions
+1/027 1 19 168 139,ego-car goes straight crossing paths at non-signalized junctions
+10/068 1 5 154 130,ego-car turns right across path at signalized junctions
+10/069 1 67 216 198,ego-car accelerately goes straight at non-signalized junctions
+10/069 1 51 200 198,ego-car accelerately goes straight at non-signalized junctions
+10/069 1 72 221 198,ego-car accelerately goes straight at non-signalized junctions
+10/069 1 68 217 198,ego-car accelerately goes straight at non-signalized junctions
+10/069 1 55 204 198,ego-car accelerately goes straight at non-signalized junctions
+10/070 1 20 169 143,a vehicle changes lanes with same direction to ego-car
+10/070 1 3 152 143,a vehicle changes lanes with same direction to ego-car
+10/070 1 13 162 143,a vehicle changes lanes with same direction to ego-car
+10/070 1 0 149 143,a vehicle changes lanes with same direction to ego-car
+10/074 1 97 246 231,ego-car passes through the blind corner of the underground park lot
+10/074 1 96 245 231,ego-car passes through the blind corner of the underground park lot
+10/074 1 86 235 231,ego-car passes through the blind corner of the underground park lot
+10/074 1 102 251 231,ego-car passes through the blind corner of the underground park lot
+10/074 1 108 257 231,ego-car passes through the blind corner of the underground park lot
+10/075 1 56 205 176,ego-car accelerately goes straight at non-signalized junctions
+10/075 1 47 196 176,ego-car accelerately goes straight at non-signalized junctions
+10/075 1 54 203 176,ego-car accelerately goes straight at non-signalized junctions
+10/075 1 55 204 176,ego-car accelerately goes straight at non-signalized junctions
+10/075 1 31 180 176,ego-car accelerately goes straight at non-signalized junctions
+10/076 1 0 149 45,ego-car turns left across path at signalized junctions
+10/077 1 18 167 152,ego-car goes straight at signalized junctions
+10/077 1 8 157 152,ego-car goes straight at signalized junctions
+10/077 1 25 174 152,ego-car goes straight at signalized junctions
+10/077 1 5 154 152,ego-car goes straight at signalized junctions
+10/077 1 10 159 152,ego-car goes straight at signalized junctions
+10/079 1 196 345 332,a vehicle turns on a road with the same direction to ego-car
+10/079 1 189 338 332,a vehicle turns on a road with the same direction to ego-car
+10/079 1 206 355 332,a vehicle turns on a road with the same direction to ego-car
+10/079 0 20 169 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 4 153 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 21 170 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 11 160 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 24 173 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 25 174 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 33 182 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 3 152 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 22 171 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 0 149 -1,a vehicle turns on a road with the same direction to ego-car
+10/079 0 8 157 -1,a vehicle turns on a road with the same direction to ego-car
+10/080 1 14 163 147,ego-car accelerately goes straight at non-signalized junctions
+10/080 1 22 171 147,ego-car accelerately goes straight at non-signalized junctions
+10/080 1 0 149 147,ego-car accelerately goes straight at non-signalized junctions
+10/080 1 9 158 147,ego-car accelerately goes straight at non-signalized junctions
+10/080 1 20 169 147,ego-car accelerately goes straight at non-signalized junctions
+10/081 1 0 149 97,ego-car goes straight crossing paths at non-signalized junctions
+10/083 1 26 175 159,ego-car accelerately goes straight at non-signalized junctions
+10/083 1 24 173 159,ego-car accelerately goes straight at non-signalized junctions
+10/083 1 34 183 159,ego-car accelerately goes straight at non-signalized junctions
+10/083 1 17 166 159,ego-car accelerately goes straight at non-signalized junctions
+10/083 1 39 188 159,ego-car accelerately goes straight at non-signalized junctions
+11/098 1 84 233 205,ego-car accelerately goes straight at non-signalized junctions
+11/098 1 73 222 205,ego-car accelerately goes straight at non-signalized junctions
+11/098 1 72 221 205,ego-car accelerately goes straight at non-signalized junctions
+11/098 1 75 224 205,ego-car accelerately goes straight at non-signalized junctions
+11/098 1 60 209 205,ego-car accelerately goes straight at non-signalized junctions
+11/099 1 101 250 226,ego-car changes lanes
+11/099 1 104 253 226,ego-car changes lanes
+11/099 1 83 232 226,ego-car changes lanes
+11/099 1 86 235 226,ego-car changes lanes
+11/099 1 91 240 226,ego-car changes lanes
+11/100 1 22 171 168,a vehicle changes lanes with the same direction to ego-car
+11/100 1 31 180 168,a vehicle changes lanes with the same direction to ego-car
+11/100 1 44 193 168,a vehicle changes lanes with the same direction to ego-car
+11/100 1 34 183 168,a vehicle changes lanes with the same direction to ego-car
+11/100 1 47 196 168,a vehicle changes lanes with the same direction to ego-car
+11/102 1 0 149 77,ego-car goes straight crossing paths at non-signalized junctions
+11/104 1 12 161 134,lead vehicle stops
+11/104 1 13 162 134,lead vehicle stops
+11/105 1 0 149 80,lead vehicle stops
+11/106 1 85 234 209,ego-car goes straight at signalized junctions
+11/106 1 60 209 209,ego-car goes straight at signalized junctions
+11/106 1 80 229 209,ego-car goes straight at signalized junctions
+11/107 1 0 149 98,lead vehicle stops
+11/108 1 41 190 172,a vehicle changes lanes with the same direction to ego-car
+11/108 1 33 182 172,a vehicle changes lanes with the same direction to ego-car
+11/108 1 48 197 172,a vehicle changes lanes with the same direction to ego-car
+11/108 1 38 187 172,a vehicle changes lanes with the same direction to ego-car
+11/108 1 35 184 172,a vehicle changes lanes with the same direction to ego-car
+11/109 1 0 149 85,vehicles meet on the road
+11/110 1 90 239 232,lead vehicle stops
+11/110 1 99 248 232,lead vehicle stops
+11/110 1 108 257 232,lead vehicle stops
+11/110 1 98 247 232,lead vehicle stops
+11/110 1 88 237 232,lead vehicle stops
+11/111 1 183 332 329,lead vehicle stops
+11/111 1 191 340 329,lead vehicle stops
+11/111 1 201 350 329,lead vehicle stops
+11/111 1 204 353 329,lead vehicle stops
+11/111 1 194 343 329,lead vehicle stops
+11/111 0 18 167 -1,lead vehicle stops
+11/111 0 28 177 -1,lead vehicle stops
+11/111 0 26 175 -1,lead vehicle stops
+11/111 0 24 173 -1,lead vehicle stops
+11/111 0 1 150 -1,lead vehicle stops
+11/111 0 23 172 -1,lead vehicle stops
+11/111 0 9 158 -1,lead vehicle stops
+11/111 0 22 171 -1,lead vehicle stops
+11/111 0 20 169 -1,lead vehicle stops
+11/111 0 15 164 -1,lead vehicle stops
+11/112 1 41 190 176,lead vehicle stops
+11/112 1 54 203 176,lead vehicle stops
+11/112 1 31 180 176,lead vehicle stops
+11/112 1 28 177 176,lead vehicle stops
+11/112 1 49 198 176,lead vehicle stops
+11/113 1 0 149 70,lead vehicle stops
+11/114 1 0 149 76,a vehicle changes lanes with the same direction to ego-car
+11/115 1 0 149 113,lead vehicle stops
+11/116 1 0 149 98,a vehicle turns on a road with the opposite direction to ego-car
+11/117 1 44 193 177,ego-car accelerating to turn on a road
+11/117 1 57 206 177,ego-car accelerating to turn on a road
+11/117 1 30 179 177,ego-car accelerating to turn on a road
+11/118 1 0 149 41,lead vehicle stops
+11/119 1 0 149 123,a vehicle turns on a road with the same direction to ego-car
+11/119 1 1 150 123,a vehicle turns on a road with the same direction to ego-car
+11/120 1 0 149 126,ego-car goes straight at signalized junctions
+12/015 1 0 149 114,a vehicle changes lanes with the same direction to ego-car 
+12/017 1 62 211 211,ego-car changes lanes
+12/017 1 80 229 211,ego-car changes lanes
+12/017 1 66 215 211,ego-car changes lanes
+12/017 1 75 224 211,ego-car changes lanes
+12/017 1 83 232 211,ego-car changes lanes
+13/004 1 58 207 191,there is an object crash
+13/004 1 68 217 191,there is an object crash
+13/004 1 69 218 191,there is an object crash
+13/004 1 65 214 191,there is an object crash
+13/004 1 61 210 191,there is an object crash
+14/013 1 162 311 292,ego-car turns at non-signalized junctions
+14/013 1 172 321 292,ego-car turns at non-signalized junctions
+14/013 1 157 306 292,ego-car turns at non-signalized junctions
+14/013 1 169 318 292,ego-car turns at non-signalized junctions
+14/013 1 167 316 292,ego-car turns at non-signalized junctions
+14/013 0 0 149 -1,ego-car turns at non-signalized junctions
+14/013 0 4 153 -1,ego-car turns at non-signalized junctions
+14/013 0 5 154 -1,ego-car turns at non-signalized junctions
+14/013 0 3 152 -1,ego-car turns at non-signalized junctions
+14/013 0 1 150 -1,ego-car turns at non-signalized junctions
+14/013 0 2 151 -1,ego-car turns at non-signalized junctions
+14/014 1 261 410 407,ego-car accelerating to turn on a road
+14/014 1 269 418 407,ego-car accelerating to turn on a road
+14/014 1 268 417 407,ego-car accelerating to turn on a road
+14/014 1 265 414 407,ego-car accelerating to turn on a road
+14/014 1 264 413 407,ego-car accelerating to turn on a road
+14/014 0 45 194 -1,ego-car accelerating to turn on a road
+14/014 0 8 157 -1,ego-car accelerating to turn on a road
+14/014 0 39 188 -1,ego-car accelerating to turn on a road
+14/014 0 104 253 -1,ego-car accelerating to turn on a road
+14/014 0 6 155 -1,ego-car accelerating to turn on a road
+14/014 0 57 206 -1,ego-car accelerating to turn on a road
+14/014 0 22 171 -1,ego-car accelerating to turn on a road
+14/014 0 107 256 -1,ego-car accelerating to turn on a road
+14/014 0 61 210 -1,ego-car accelerating to turn on a road
+14/014 0 86 235 -1,ego-car accelerating to turn on a road
+14/015 1 0 149 111,ego-car is out of control
+15/001 1 122 271 244,ego-car is out of control
+15/001 1 120 269 244,ego-car is out of control
+15/001 1 104 253 244,ego-car is out of control
+15/001 1 95 244 244,ego-car is out of control
+15/001 1 114 263 244,ego-car is out of control
+16/001 1 0 149 122,ego-car is out of control
+17/001 1 40 189 163,there is an object crash
+17/001 1 24 173 163,there is an object crash
+17/001 1 41 190 163,there is an object crash
+17/001 1 35 184 163,there is an object crash
+17/001 1 43 192 163,there is an object crash
+2/004 1 0 149 106,ego-car is out of control
+20/001 1 11 160 152,a vehicle turns on a road with the same direction to another vehicle
+20/001 1 30 179 152,a vehicle turns on a road with the same direction to another vehicle
+20/001 1 9 158 152,a vehicle turns on a road with the same direction to another vehicle
+20/001 1 32 181 152,a vehicle turns on a road with the same direction to another vehicle
+20/001 1 13 162 152,a vehicle turns on a road with the same direction to another vehicle
+21/001 1 0 149 78,a vehicle turns on a road with the same direction to another vehicle
+22/007 1 74 223 200,a vehicle is out of control
+22/007 1 78 227 200,a vehicle is out of control
+22/007 1 66 215 200,a vehicle is out of control
+22/007 1 63 212 200,a vehicle is out of control
+22/007 1 73 222 200,a vehicle is out of control
+22/008 1 147 296 269,a vehicle is out of control
+22/008 1 120 269 269,a vehicle is out of control
+22/008 1 146 295 269,a vehicle is out of control
+22/008 1 128 277 269,a vehicle is out of control
+22/008 1 143 292 269,a vehicle is out of control
+23/001 1 38 187 170,motorbikes meet on the road
+23/001 1 46 195 170,motorbikes meet on the road
+23/001 1 28 177 170,motorbikes meet on the road
+23/001 1 41 190 170,motorbikes meet on the road
+23/001 1 32 181 170,motorbikes meet on the road
+24/001 1 178 327 324,a vehicle overtakes
+24/001 0 1 150 -1,a vehicle overtakes
+24/001 0 22 171 -1,a vehicle overtakes
+24/001 0 0 149 -1,a vehicle overtakes
+24/001 0 15 164 -1,a vehicle overtakes
+24/001 0 25 174 -1,a vehicle overtakes
+24/001 0 5 154 -1,a vehicle overtakes
+24/001 0 21 170 -1,a vehicle overtakes
+24/001 0 26 175 -1,a vehicle overtakes
+24/001 0 17 166 -1,a vehicle overtakes
+24/001 0 14 163 -1,a vehicle overtakes
+26/001 1 0 149 68,lead vehicle decelerates
+27/006 1 0 149 52,a vehicle backes up into another vehicle
+27/007 1 0 149 70,a vehicle is out of control
+28/036 1 0 149 113,lead vehicle stops
+28/038 1 3 152 127,a motorbike is out of control
+28/038 1 2 151 127,a motorbike is out of control
+28/038 1 0 149 127,a motorbike is out of control
+28/042 1 0 149 91,a motorbike is out of control
+29/029 1 256 405 380,motorbikes meet on the road
+29/029 1 238 387 380,motorbikes meet on the road
+29/029 1 239 388 380,motorbikes meet on the road
+29/029 1 254 403 380,motorbikes meet on the road
+29/029 1 248 397 380,motorbikes meet on the road
+29/029 0 0 149 -1,motorbikes meet on the road
+29/029 0 30 179 -1,motorbikes meet on the road
+29/029 0 23 172 -1,motorbikes meet on the road
+29/029 0 65 214 -1,motorbikes meet on the road
+29/029 0 19 168 -1,motorbikes meet on the road
+29/029 0 0 149 -1,motorbikes meet on the road
+29/029 0 63 212 -1,motorbikes meet on the road
+29/029 0 82 231 -1,motorbikes meet on the road
+29/029 0 58 207 -1,motorbikes meet on the road
+29/029 0 28 177 -1,motorbikes meet on the road
+29/029 0 8 157 -1,motorbikes meet on the road
+29/029 0 30 179 -1,motorbikes meet on the road
+29/029 0 46 195 -1,motorbikes meet on the road
+29/030 1 80 229 228,motorbikes meet on the road
+29/030 1 93 242 228,motorbikes meet on the road
+29/030 1 92 241 228,motorbikes meet on the road
+29/030 1 99 248 228,motorbikes meet on the road
+29/030 1 89 238 228,motorbikes meet on the road
+29/031 1 188 337 334,a motorbike accelerately goes straight at signalized junctions
+29/031 1 192 341 334,a motorbike accelerately goes straight at signalized junctions
+29/031 1 211 360 334,a motorbike accelerately goes straight at signalized junctions
+29/031 1 212 361 334,a motorbike accelerately goes straight at signalized junctions
+29/031 1 210 359 334,a motorbike accelerately goes straight at signalized junctions
+29/031 0 32 181 -1,a motorbike accelerately goes straight at signalized junctions
+29/031 0 3 152 -1,a motorbike accelerately goes straight at signalized junctions
+29/031 0 10 159 -1,a motorbike accelerately goes straight at signalized junctions
+29/031 0 12 161 -1,a motorbike accelerately goes straight at signalized junctions
+29/031 0 28 177 -1,a motorbike accelerately goes straight at signalized junctions
+29/031 0 1 150 -1,a motorbike accelerately goes straight at signalized junctions
+29/031 0 16 165 -1,a motorbike accelerately goes straight at signalized junctions
+29/031 0 26 175 -1,a motorbike accelerately goes straight at signalized junctions
+29/031 0 7 156 -1,a motorbike accelerately goes straight at signalized junctions
+29/032 1 0 149 73,a motorbike overtakes
+29/033 1 35 184 159,there is an object crash
+29/033 1 25 174 159,there is an object crash
+29/033 1 37 186 159,there is an object crash
+29/033 1 20 169 159,there is an object crash
+29/033 1 18 167 159,there is an object crash
+29/034 1 134 283 257,a motorbike accelerately goes straight at signalized junctions
+29/034 1 125 274 257,a motorbike accelerately goes straight at signalized junctions
+29/034 1 109 258 257,a motorbike accelerately goes straight at signalized junctions
+29/034 1 113 262 257,a motorbike accelerately goes straight at signalized junctions
+29/034 1 116 265 257,a motorbike accelerately goes straight at signalized junctions
+29/035 1 0 149 70,a motorbike crosses the road
+3/006 1 0 149 134,a motorbike runs red light
+3/006 1 7 156 134,a motorbike runs red light
+3/007 1 0 149 70,a vehicle goes straight in the blind spot area
+30/014 1 38 187 178,a vehicle is out of control
+30/014 1 33 182 178,a vehicle is out of control
+30/014 1 50 199 178,a vehicle is out of control
+30/014 1 57 206 178,a vehicle is out of control
+30/014 1 41 190 178,a vehicle is out of control
+30/015 1 0 149 110,a vehicle is out of control
+30/016 1 0 149 81,a vehicle is out of control
+31/007 1 190 339 311,a vehicle changes lanes with the same direction to another vehicle
+31/007 1 176 325 311,a vehicle changes lanes with the same direction to another vehicle
+31/007 1 186 335 311,a vehicle changes lanes with the same direction to another vehicle
+31/007 1 163 312 311,a vehicle changes lanes with the same direction to another vehicle
+31/007 1 184 333 311,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 6 155 -1,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 5 154 -1,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 8 157 -1,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 7 156 -1,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 9 158 -1,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 10 159 -1,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 2 151 -1,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 1 150 -1,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 11 160 -1,a vehicle changes lanes with the same direction to another vehicle
+31/007 0 0 149 -1,a vehicle changes lanes with the same direction to another vehicle
+31/008 1 155 304 285,lead vehicle stops
+31/008 1 145 294 285,lead vehicle stops
+31/008 1 151 300 285,lead vehicle stops
+31/008 1 148 297 285,lead vehicle stops
+31/008 1 165 314 285,lead vehicle stops
+32/008 1 244 393 382,lead vehicle stops
+32/008 1 260 409 382,lead vehicle stops
+32/008 1 233 382 382,lead vehicle stops
+32/008 1 242 391 382,lead vehicle stops
+32/008 1 236 385 382,lead vehicle stops
+32/008 0 31 180 -1,lead vehicle stops
+32/008 0 45 194 -1,lead vehicle stops
+32/008 0 14 163 -1,lead vehicle stops
+32/008 0 8 157 -1,lead vehicle stops
+32/008 0 13 162 -1,lead vehicle stops
+32/008 0 6 155 -1,lead vehicle stops
+32/008 0 7 156 -1,lead vehicle stops
+32/008 0 62 211 -1,lead vehicle stops
+32/008 0 21 170 -1,lead vehicle stops
+32/008 0 76 225 -1,lead vehicle stops
+32/008 0 0 149 -1,lead vehicle stops
+32/008 0 10 159 -1,lead vehicle stops
+32/008 0 5 154 -1,lead vehicle stops
+33/011 1 63 212 206,a vehicle is out of control
+33/011 1 58 207 206,a vehicle is out of control
+33/011 1 74 223 206,a vehicle is out of control
+33/011 1 72 221 206,a vehicle is out of control
+33/011 1 82 231 206,a vehicle is out of control
+33/012 1 0 149 65,a vehicle is out of control
+33/013 1 76 225 213,a vehicle makes a dodges action
+33/013 1 77 226 213,a vehicle makes a dodges action
+33/013 1 92 241 213,a vehicle makes a dodges action
+33/013 1 68 217 213,a vehicle makes a dodges action
+33/013 1 86 235 213,a vehicle makes a dodges action
+34/088 1 176 325 313,a vehicle accelerately goes straight at non-signalized junctions
+34/088 1 183 332 313,a vehicle accelerately goes straight at non-signalized junctions
+34/088 1 184 333 313,a vehicle accelerately goes straight at non-signalized junctions
+34/088 1 180 329 313,a vehicle accelerately goes straight at non-signalized junctions
+34/088 1 168 317 313,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 0 149 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 6 155 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 13 162 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 7 156 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 15 164 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 12 161 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 5 154 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 14 163 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 3 152 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 4 153 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 1 150 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/088 0 2 151 -1,a vehicle accelerately goes straight at non-signalized junctions
+34/089 1 0 149 73,a vehicle goes straight at signalized junctions
+34/090 1 0 149 145,a vehicle turns left across path at signalized junctions
+34/090 1 5 154 145,a vehicle turns left across path at signalized junctions
+34/090 1 20 169 145,a vehicle turns left across path at signalized junctions
+34/090 1 9 158 145,a vehicle turns left across path at signalized junctions
+34/090 1 1 150 145,a vehicle turns left across path at signalized junctions
+34/091 1 82 231 209,a vehicle backes up into another vehicle
+34/091 1 66 215 209,a vehicle backes up into another vehicle
+34/091 1 75 224 209,a vehicle backes up into another vehicle
+34/091 1 78 227 209,a vehicle backes up into another vehicle
+34/091 1 79 228 209,a vehicle backes up into another vehicle
+34/092 1 43 192 175,a vehicle goes straight at signalized junctions
+34/092 1 34 183 175,a vehicle goes straight at signalized junctions
+34/092 1 32 181 175,a vehicle goes straight at signalized junctions
+34/092 1 37 186 175,a vehicle goes straight at signalized junctions
+34/092 1 40 189 175,a vehicle goes straight at signalized junctions
+34/093 1 0 149 86,a vehicle changes lanes with the same direction to another vehicle
+34/094 1 34 183 177,a vehicle changes lanes with the same direction to another vehicle
+34/094 1 52 201 177,a vehicle changes lanes with the same direction to another vehicle
+34/094 1 41 190 177,a vehicle changes lanes with the same direction to another vehicle
+34/094 1 51 200 177,a vehicle changes lanes with the same direction to another vehicle
+34/094 1 39 188 177,a vehicle changes lanes with the same direction to another vehicle
+34/095 1 0 149 97,a following vehicle makes a maneuver
+34/096 1 200 349 333,a vehicle changes lanes with the same direction to another vehicle
+34/096 1 210 359 333,a vehicle changes lanes with the same direction to another vehicle
+34/096 1 187 336 333,a vehicle changes lanes with the same direction to another vehicle
+34/096 1 209 358 333,a vehicle changes lanes with the same direction to another vehicle
+34/096 1 190 339 333,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 24 173 -1,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 20 169 -1,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 3 152 -1,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 9 158 -1,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 29 178 -1,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 25 174 -1,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 2 151 -1,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 19 168 -1,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 33 182 -1,a vehicle changes lanes with the same direction to another vehicle
+34/096 0 26 175 -1,a vehicle changes lanes with the same direction to another vehicle
+34/097 1 41 190 162,a vehicle backes up into another vehicle
+34/097 1 36 185 162,a vehicle backes up into another vehicle
+34/097 1 22 171 162,a vehicle backes up into another vehicle
+34/097 1 33 182 162,a vehicle backes up into another vehicle
+34/097 1 18 167 162,a vehicle backes up into another vehicle
+34/098 1 96 245 217,a vehicle turns on a road with the opposite direction to another vehicle
+34/098 1 70 219 217,a vehicle turns on a road with the opposite direction to another vehicle
+34/098 1 68 217 217,a vehicle turns on a road with the opposite direction to another vehicle
+34/099 1 67 216 212,lead vehicle stops
+34/099 1 83 232 212,lead vehicle stops
+34/099 1 87 236 212,lead vehicle stops
+34/099 1 66 215 212,lead vehicle stops
+34/099 1 92 241 212,lead vehicle stops
+34/100 1 210 359 342,lead vehicle stops
+34/100 1 220 369 342,lead vehicle stops
+34/100 1 215 364 342,lead vehicle stops
+34/100 1 212 361 342,lead vehicle stops
+34/100 1 206 355 342,lead vehicle stops
+34/100 0 14 163 -1,lead vehicle stops
+34/100 0 23 172 -1,lead vehicle stops
+34/100 0 41 190 -1,lead vehicle stops
+34/100 0 53 202 -1,lead vehicle stops
+34/100 0 8 157 -1,lead vehicle stops
+34/100 0 4 153 -1,lead vehicle stops
+34/100 0 21 170 -1,lead vehicle stops
+34/100 0 0 149 -1,lead vehicle stops
+34/100 0 10 159 -1,lead vehicle stops
+34/100 0 7 156 -1,lead vehicle stops
+34/100 0 29 178 -1,lead vehicle stops
+34/100 0 2 151 -1,lead vehicle stops
+34/101 1 260 409 382,a vehicle turns left across path at non-signalized junctions
+34/101 1 233 382 382,a vehicle turns left across path at non-signalized junctions
+34/101 1 242 391 382,a vehicle turns left across path at non-signalized junctions
+34/101 1 243 392 382,a vehicle turns left across path at non-signalized junctions
+34/101 1 250 399 382,a vehicle turns left across path at non-signalized junctions
+34/101 0 56 205 -1,a vehicle turns left across path at non-signalized junctions
+34/101 0 72 221 -1,a vehicle turns left across path at non-signalized junctions
+34/101 0 34 183 -1,a vehicle turns left across path at non-signalized junctions
+34/101 0 15 164 -1,a vehicle turns left across path at non-signalized junctions
+34/101 0 36 185 -1,a vehicle turns left across path at non-signalized junctions
+34/101 0 8 157 -1,a vehicle turns left across path at non-signalized junctions
+34/101 0 20 169 -1,a vehicle turns left across path at non-signalized junctions
+34/101 0 74 223 -1,a vehicle turns left across path at non-signalized junctions
+34/101 0 31 180 -1,a vehicle turns left across path at non-signalized junctions
+34/101 0 52 201 -1,a vehicle turns left across path at non-signalized junctions
+34/102 1 8 157 147,lead vehicle stops
+34/102 1 12 161 147,lead vehicle stops
+34/102 1 0 149 147,lead vehicle stops
+34/102 1 9 158 147,lead vehicle stops
+34/102 1 3 152 147,lead vehicle stops
+34/103 1 35 184 181,a vehicle accelerately goes straight at non-signalized junctions
+34/103 1 53 202 181,a vehicle accelerately goes straight at non-signalized junctions
+34/103 1 57 206 181,a vehicle accelerately goes straight at non-signalized junctions
+34/103 1 47 196 181,a vehicle accelerately goes straight at non-signalized junctions
+34/103 1 59 208 181,a vehicle accelerately goes straight at non-signalized junctions
+34/104 1 167 316 316,a vehicle goes straight at signalized junctions
+34/104 1 182 331 316,a vehicle goes straight at signalized junctions
+34/104 1 183 332 316,a vehicle goes straight at signalized junctions
+34/104 1 194 343 316,a vehicle goes straight at signalized junctions
+34/104 1 178 327 316,a vehicle goes straight at signalized junctions
+34/104 0 11 160 -1,a vehicle goes straight at signalized junctions
+34/104 0 9 158 -1,a vehicle goes straight at signalized junctions
+34/104 0 5 154 -1,a vehicle goes straight at signalized junctions
+34/104 0 12 161 -1,a vehicle goes straight at signalized junctions
+34/104 0 6 155 -1,a vehicle goes straight at signalized junctions
+34/104 0 15 164 -1,a vehicle goes straight at signalized junctions
+34/104 0 7 156 -1,a vehicle goes straight at signalized junctions
+34/104 0 8 157 -1,a vehicle goes straight at signalized junctions
+34/104 0 2 151 -1,a vehicle goes straight at signalized junctions
+34/104 0 3 152 -1,a vehicle goes straight at signalized junctions
+34/105 1 161 310 302,a vehicle backes up into another vehicle
+34/105 1 159 308 302,a vehicle backes up into another vehicle
+34/105 1 158 307 302,a vehicle backes up into another vehicle
+34/105 1 164 313 302,a vehicle backes up into another vehicle
+34/105 1 169 318 302,a vehicle backes up into another vehicle
+34/105 0 2 151 -1,a vehicle backes up into another vehicle
+34/105 0 3 152 -1,a vehicle backes up into another vehicle
+34/105 0 6 155 -1,a vehicle backes up into another vehicle
+34/105 0 4 153 -1,a vehicle backes up into another vehicle
+34/105 0 0 149 -1,a vehicle backes up into another vehicle
+34/105 0 5 154 -1,a vehicle backes up into another vehicle
+34/105 0 1 150 -1,a vehicle backes up into another vehicle
+34/106 1 7 156 138,lead vehicle stops
+34/106 1 13 162 138,lead vehicle stops
+34/106 1 0 149 138,lead vehicle stops
+34/108 1 46 195 186,a vehicle backes up into another vehicle
+34/108 1 43 192 186,a vehicle backes up into another vehicle
+34/108 1 50 199 186,a vehicle backes up into another vehicle
+34/108 1 40 189 186,a vehicle backes up into another vehicle
+34/108 1 48 197 186,a vehicle backes up into another vehicle
+34/108 1 63 212 186,a vehicle backes up into another vehicle
+34/108 1 37 186 186,a vehicle backes up into another vehicle
+34/109 1 70 219 192,a vehicle changes lanes with the same direction to another vehicle
+34/109 1 62 211 192,a vehicle changes lanes with the same direction to another vehicle
+34/109 1 48 197 192,a vehicle changes lanes with the same direction to another vehicle
+34/109 1 43 192 192,a vehicle changes lanes with the same direction to another vehicle
+34/109 1 68 217 192,a vehicle changes lanes with the same direction to another vehicle
+36/006 1 146 295 280,a vehicle changes lanes with the same direction to motorbike
+36/006 1 134 283 280,a vehicle changes lanes with the same direction to motorbike
+36/006 1 152 301 280,a vehicle changes lanes with the same direction to motorbike
+36/006 1 141 290 280,a vehicle changes lanes with the same direction to motorbike
+36/006 1 144 293 280,a vehicle changes lanes with the same direction to motorbike
+37/001 1 9 158 144,a motorbike changes lines into motorway
+37/001 1 24 173 144,a motorbike changes lines into motorway
+37/001 1 16 165 144,a motorbike changes lines into motorway
+37/001 1 12 161 144,a motorbike changes lines into motorway
+37/001 1 11 160 144,a motorbike changes lines into motorway
+38/034 1 0 149 100,a vehicle turns left across path at non-signalized junctions
+38/035 1 22 171 160,a vehicle goes straight at signalized junctions
+38/035 1 14 163 160,a vehicle goes straight at signalized junctions
+38/035 1 28 177 160,a vehicle goes straight at signalized junctions
+38/035 1 36 185 160,a vehicle goes straight at signalized junctions
+38/035 1 20 169 160,a vehicle goes straight at signalized junctions
+38/037 1 137 286 261,a vehicle makes a dodges action
+38/037 1 132 281 261,a vehicle makes a dodges action
+38/037 1 125 274 261,a vehicle makes a dodges action
+38/037 1 112 261 261,a vehicle makes a dodges action
+38/037 1 115 264 261,a vehicle makes a dodges action
+38/038 1 0 149 101,lead vehicle stops
+38/039 1 213 362 354,a vehicle accelerately goes straight at non-signalized junctions
+38/039 1 233 382 354,a vehicle accelerately goes straight at non-signalized junctions
+38/039 1 231 380 354,a vehicle accelerately goes straight at non-signalized junctions
+38/039 1 230 379 354,a vehicle accelerately goes straight at non-signalized junctions
+38/039 1 221 370 354,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 59 208 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 45 194 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 41 190 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 57 206 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 60 209 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 31 180 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 36 185 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 12 161 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 3 152 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 22 171 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 0 149 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/039 0 10 159 -1,a vehicle accelerately goes straight at non-signalized junctions
+38/040 1 97 246 235,lead vehicle stops
+38/040 1 112 261 235,lead vehicle stops
+38/040 1 106 255 235,lead vehicle stops
+38/040 1 101 250 235,lead vehicle stops
+38/040 1 90 239 235,lead vehicle stops
+38/041 1 1 150 128,a vehicle runs red light
+38/041 1 0 149 128,a vehicle runs red light
+38/041 1 5 154 128,a vehicle runs red light
+38/041 1 4 153 128,a vehicle runs red light
+39/020 1 49 198 174,a vehicle turns around at non-signalized junctions
+39/020 1 33 182 174,a vehicle turns around at non-signalized junctions
+39/020 1 47 196 174,a vehicle turns around at non-signalized junctions
+39/020 1 25 174 174,a vehicle turns around at non-signalized junctions
+39/020 1 36 185 174,a vehicle turns around at non-signalized junctions
+39/021 1 91 240 222,a vehicle changes lanes with the same direction to another vehicle
+39/021 1 76 225 222,a vehicle changes lanes with the same direction to another vehicle
+39/021 1 97 246 222,a vehicle changes lanes with the same direction to another vehicle
+39/021 1 87 236 222,a vehicle changes lanes with the same direction to another vehicle
+39/021 1 90 239 222,a vehicle changes lanes with the same direction to another vehicle
+39/022 1 98 247 234,a vehicle turns left across path at non-signalized junctions
+39/022 1 89 238 234,a vehicle turns left across path at non-signalized junctions
+39/022 1 101 250 234,a vehicle turns left across path at non-signalized junctions
+39/022 1 100 249 234,a vehicle turns left across path at non-signalized junctions
+39/022 1 97 246 234,a vehicle turns left across path at non-signalized junctions
+39/023 1 102 251 226,a vehicle overtakes
+39/023 1 79 228 226,a vehicle overtakes
+39/023 1 96 245 226,a vehicle overtakes
+39/023 1 97 246 226,a vehicle overtakes
+39/023 1 77 226 226,a vehicle overtakes
+39/024 1 83 232 230,a vehicle changes lanes with the same direction to another vehicle
+39/024 1 105 254 230,a vehicle changes lanes with the same direction to another vehicle
+39/024 1 110 259 230,a vehicle changes lanes with the same direction to another vehicle
+39/024 1 87 236 230,a vehicle changes lanes with the same direction to another vehicle
+39/024 1 102 251 230,a vehicle changes lanes with the same direction to another vehicle
+4/007 1 74 223 198,ego-car turns left across path at non-signalized junctions
+4/007 1 53 202 198,ego-car turns left across path at non-signalized junctions
+4/007 1 57 206 198,ego-car turns left across path at non-signalized junctions
+4/007 1 63 212 198,ego-car turns left across path at non-signalized junctions
+4/007 1 49 198 198,ego-car turns left across path at non-signalized junctions
+4/008 1 221 370 363,a motorbike accelerately goes straight at signalized junctions
+4/008 1 218 367 363,a motorbike accelerately goes straight at signalized junctions
+4/008 1 233 382 363,a motorbike accelerately goes straight at signalized junctions
+4/008 1 216 365 363,a motorbike accelerately goes straight at signalized junctions
+4/008 1 227 376 363,a motorbike accelerately goes straight at signalized junctions
+4/008 0 31 180 -1,a motorbike accelerately goes straight at signalized junctions
+4/008 0 42 191 -1,a motorbike accelerately goes straight at signalized junctions
+4/008 0 16 165 -1,a motorbike accelerately goes straight at signalized junctions
+4/008 0 48 197 -1,a motorbike accelerately goes straight at signalized junctions
+4/008 0 56 205 -1,a motorbike accelerately goes straight at signalized junctions
+4/008 0 25 174 -1,a motorbike accelerately goes straight at signalized junctions
+4/008 0 4 153 -1,a motorbike accelerately goes straight at signalized junctions
+4/008 0 7 156 -1,a motorbike accelerately goes straight at signalized junctions
+4/008 0 0 149 -1,a motorbike accelerately goes straight at signalized junctions
+4/008 0 34 183 -1,a motorbike accelerately goes straight at signalized junctions
+40/080 1 17 166 153,a motorbike crosses the road
+40/080 1 30 179 153,a motorbike crosses the road
+40/080 1 14 163 153,a motorbike crosses the road
+40/080 1 9 158 153,a motorbike crosses the road
+40/080 1 4 153 153,a motorbike crosses the road
+40/082 1 0 149 96,a vehicle is out of control
+40/083 1 0 149 134,a vehicle changes lanes with the same direction to another vehicle
+40/083 1 10 159 134,a vehicle changes lanes with the same direction to another vehicle
+40/083 1 14 163 134,a vehicle changes lanes with the same direction to another vehicle
+40/083 1 12 161 134,a vehicle changes lanes with the same direction to another vehicle
+40/086 1 50 199 176,a motorbike changes lines into motorway
+40/086 1 27 176 176,a motorbike changes lines into motorway
+40/086 1 49 198 176,a motorbike changes lines into motorway
+40/086 1 29 178 176,a motorbike changes lines into motorway
+40/086 1 43 192 176,a motorbike changes lines into motorway
+40/088 1 133 282 272,a vehicle turns right across path at non-signalized junctions
+40/088 1 147 296 272,a vehicle turns right across path at non-signalized junctions
+40/088 1 126 275 272,a vehicle turns right across path at non-signalized junctions
+40/088 1 125 274 272,a vehicle turns right across path at non-signalized junctions
+40/088 1 141 290 272,a vehicle turns right across path at non-signalized junctions
+40/091 1 47 196 174,a vehicle turns on a road with the opposite direction to another vehicle
+40/091 1 30 179 174,a vehicle turns on a road with the opposite direction to another vehicle
+40/091 1 35 184 174,a vehicle turns on a road with the opposite direction to another vehicle
+40/091 1 50 199 174,a vehicle turns on a road with the opposite direction to another vehicle
+40/091 1 34 183 174,a vehicle turns on a road with the opposite direction to another vehicle
+40/094 1 245 394 387,a vehicle is out of control
+40/094 1 249 398 387,a vehicle is out of control
+40/094 1 244 393 387,a vehicle is out of control
+40/094 1 266 415 387,a vehicle is out of control
+40/094 1 257 406 387,a vehicle is out of control
+40/094 0 5 154 -1,a vehicle is out of control
+40/094 0 20 169 -1,a vehicle is out of control
+40/094 0 31 180 -1,a vehicle is out of control
+40/094 0 64 213 -1,a vehicle is out of control
+40/094 0 9 158 -1,a vehicle is out of control
+40/094 0 48 197 -1,a vehicle is out of control
+40/094 0 50 199 -1,a vehicle is out of control
+40/094 0 59 208 -1,a vehicle is out of control
+40/094 0 56 205 -1,a vehicle is out of control
+40/094 0 7 156 -1,a vehicle is out of control
+40/095 1 0 149 90,a vehicle turns on a road with the same direction to motorbike
+40/096 1 67 216 198,a vehicle  goes straight crossing paths at non-signalized junctions
+40/096 1 53 202 198,a vehicle  goes straight crossing paths at non-signalized junctions
+40/096 1 55 204 198,a vehicle  goes straight crossing paths at non-signalized junctions
+40/096 1 54 203 198,a vehicle  goes straight crossing paths at non-signalized junctions
+40/096 1 64 213 198,a vehicle  goes straight crossing paths at non-signalized junctions
+40/099 1 38 187 161,a motorbike runs red light
+40/099 1 23 172 161,a motorbike runs red light
+40/099 1 32 181 161,a motorbike runs red light
+40/099 1 22 171 161,a motorbike runs red light
+40/099 1 40 189 161,a motorbike runs red light
+40/099 1 18 167 161,a motorbike runs red light
+40/099 1 24 173 161,a motorbike runs red light
+41/007 1 190 339 338,a vehicle backes up into another vehicle
+41/007 1 191 340 338,a vehicle backes up into another vehicle
+41/007 1 209 358 338,a vehicle backes up into another vehicle
+41/007 1 212 361 338,a vehicle backes up into another vehicle
+41/007 1 197 346 338,a vehicle backes up into another vehicle
+41/007 0 36 185 -1,a vehicle backes up into another vehicle
+41/007 0 24 173 -1,a vehicle backes up into another vehicle
+41/007 0 19 168 -1,a vehicle backes up into another vehicle
+41/007 0 7 156 -1,a vehicle backes up into another vehicle
+41/007 0 10 159 -1,a vehicle backes up into another vehicle
+41/007 0 27 176 -1,a vehicle backes up into another vehicle
+41/007 0 26 175 -1,a vehicle backes up into another vehicle
+41/007 0 6 155 -1,a vehicle backes up into another vehicle
+41/007 0 35 184 -1,a vehicle backes up into another vehicle
+41/007 0 25 174 -1,a vehicle backes up into another vehicle
+41/008 1 117 266 251,a motorbike dodges the vehicle
+41/008 1 121 270 251,a motorbike dodges the vehicle
+41/008 1 125 274 251,a motorbike dodges the vehicle
+41/008 1 109 258 251,a motorbike dodges the vehicle
+41/008 1 130 279 251,a motorbike dodges the vehicle
+42/004 1 82 231 216,a motorbike evades the pedestrian
+42/004 1 79 228 216,a motorbike evades the pedestrian
+42/004 1 84 233 216,a motorbike evades the pedestrian
+42/004 1 76 225 216,a motorbike evades the pedestrian
+42/004 1 81 230 216,a motorbike evades the pedestrian
+43/006 1 0 149 94,a motorbike evades the pedestrian
+43/007 1 6 155 145,a motorbike evades the pedestrian
+43/007 1 12 161 145,a motorbike evades the pedestrian
+43/007 1 9 158 145,a motorbike evades the pedestrian
+43/007 1 0 149 145,a motorbike evades the pedestrian
+44/002 1 163 312 287,a pedestrian crosses the road
+44/002 1 162 311 287,a pedestrian crosses the road
+44/002 1 157 306 287,a pedestrian crosses the road
+44/002 1 160 309 287,a pedestrian crosses the road
+44/002 1 142 291 287,a pedestrian crosses the road
+46/017 1 160 309 300,motorbikes meet on the road
+46/017 1 177 326 300,motorbikes meet on the road
+46/017 1 157 306 300,motorbikes meet on the road
+46/017 1 172 321 300,motorbikes meet on the road
+46/017 1 151 300 300,motorbikes meet on the road
+46/019 1 52 201 172,a following vehicle makes a maneuver
+46/019 1 41 190 172,a following vehicle makes a maneuver
+46/019 1 43 192 172,a following vehicle makes a maneuver
+46/019 1 49 198 172,a following vehicle makes a maneuver
+46/019 1 35 184 172,a following vehicle makes a maneuver
+47/022 1 0 149 78,a motorbike runs red light
+47/023 1 90 239 230,a motorbike evades the vehicle
+47/023 1 99 248 230,a motorbike evades the vehicle
+47/023 1 94 243 230,a motorbike evades the vehicle
+47/023 1 107 256 230,a motorbike evades the vehicle
+47/023 1 97 246 230,a motorbike evades the vehicle
+47/024 1 56 205 190,a vehicle backes up into another vehicle
+47/024 1 68 217 190,a vehicle backes up into another vehicle
+47/024 1 41 190 190,a vehicle backes up into another vehicle
+47/024 1 44 193 190,a vehicle backes up into another vehicle
+47/024 1 65 214 190,a vehicle backes up into another vehicle
+49/008 1 0 149 123,a motorbike is out of control
+49/009 1 274 423 408,a motorbike is out of control
+49/009 1 271 420 408,a motorbike is out of control
+49/009 1 261 410 408,a motorbike is out of control
+49/009 1 282 431 408,a motorbike is out of control
+49/009 1 284 433 408,a motorbike is out of control
+49/009 0 50 199 -1,a motorbike is out of control
+49/009 0 77 226 -1,a motorbike is out of control
+49/009 0 28 177 -1,a motorbike is out of control
+49/009 0 78 227 -1,a motorbike is out of control
+49/009 0 33 182 -1,a motorbike is out of control
+49/009 0 67 216 -1,a motorbike is out of control
+49/009 0 20 169 -1,a motorbike is out of control
+49/009 0 14 163 -1,a motorbike is out of control
+49/009 0 3 152 -1,a motorbike is out of control
+49/009 0 8 157 -1,a motorbike is out of control
+49/009 0 109 258 -1,a motorbike is out of control
+49/009 0 29 178 -1,a motorbike is out of control
+5/065 1 0 149 93,ego-car evades the motorbike
+5/066 1 120 269 243,a motorbike is out of control
+5/066 1 110 259 243,a motorbike is out of control
+5/066 1 95 244 243,a motorbike is out of control
+5/067 1 110 259 242,a motorbike runs red light
+5/067 1 108 257 242,a motorbike runs red light
+5/067 1 96 245 242,a motorbike runs red light
+5/067 1 107 256 242,a motorbike runs red light
+5/067 1 100 249 242,a motorbike runs red light
+5/069 1 121 270 246,ego-car goes straight at signalized junctions
+5/069 1 97 246 246,ego-car goes straight at signalized junctions
+5/069 1 109 258 246,ego-car goes straight at signalized junctions
+5/069 1 100 249 246,ego-car goes straight at signalized junctions
+5/069 1 101 250 246,ego-car goes straight at signalized junctions
+5/070 1 0 149 109,a motorbike runs red light
+5/072 1 71 220 217,ego-car goes straight in the blind spot area
+5/072 1 87 236 217,ego-car goes straight in the blind spot area
+5/072 1 86 235 217,ego-car goes straight in the blind spot area
+5/072 1 89 238 217,ego-car goes straight in the blind spot area
+5/072 1 69 218 217,ego-car goes straight in the blind spot area
+5/073 1 32 181 159,a motorbike crosses the road
+5/073 1 38 187 159,a motorbike crosses the road
+5/073 1 27 176 159,a motorbike crosses the road
+5/073 1 29 178 159,a motorbike crosses the road
+5/073 1 23 172 159,a motorbike crosses the road
+5/078 1 2 151 130,a motorbike runs red light
+5/078 1 0 149 130,a motorbike runs red light
+5/078 1 5 154 130,a motorbike runs red light
+5/079 1 0 149 102,ego-car turns left across path at non-signalized junctions
+51/009 1 71 220 218,ego-car is out of control
+51/009 1 86 235 218,ego-car is out of control
+51/009 1 95 244 218,ego-car is out of control
+51/009 1 84 233 218,ego-car is out of control
+51/009 1 79 228 218,ego-car is out of control
+53/001 1 41 190 165,a vehicle is out of control
+53/001 1 22 171 165,a vehicle is out of control
+53/001 1 23 172 165,a vehicle is out of control
+53/001 1 29 178 165,a vehicle is out of control
+53/001 1 35 184 165,a vehicle is out of control
+54/017 1 0 149 102,a vehicle overtakes
+54/019 1 62 211 192,a motorbike accelerately goes straight at signalized junctions
+54/019 1 48 197 192,a motorbike accelerately goes straight at signalized junctions
+54/019 1 60 209 192,a motorbike accelerately goes straight at signalized junctions
+54/019 1 43 192 192,a motorbike accelerately goes straight at signalized junctions
+54/019 1 66 215 192,a motorbike accelerately goes straight at signalized junctions
+54/020 1 1 150 121,a motorbike changes lines into motorway
+54/020 1 0 149 121,a motorbike changes lines into motorway
+6/049 1 0 149 121,a motorbike is out of control
+6/050 1 9 158 132,a motorbike evades the vehicle
+6/050 1 0 149 132,a motorbike evades the vehicle
+6/050 1 1 150 132,a motorbike evades the vehicle
+6/051 1 155 304 303,a motorbike changes lines into motorway
+6/051 1 161 310 303,a motorbike changes lines into motorway
+6/051 1 159 308 303,a motorbike changes lines into motorway
+6/051 1 163 312 303,a motorbike changes lines into motorway
+6/051 1 181 330 303,a motorbike changes lines into motorway
+6/051 0 2 151 -1,a motorbike changes lines into motorway
+6/051 0 0 149 -1,a motorbike changes lines into motorway
+6/051 0 3 152 -1,a motorbike changes lines into motorway
+6/051 0 1 150 -1,a motorbike changes lines into motorway
+6/052 1 0 149 134,a vehicle changes lanes with the same direction to the motorbike
+6/052 1 7 156 134,a vehicle changes lanes with the same direction to the motorbike
+6/052 1 3 152 134,a vehicle changes lanes with the same direction to the motorbike
+6/052 1 11 160 134,a vehicle changes lanes with the same direction to the motorbike
+6/053 1 0 149 149,ego-car goes straight crossing paths at non-signalized junctions
+6/053 1 27 176 149,ego-car goes straight crossing paths at non-signalized junctions
+6/053 1 19 168 149,ego-car goes straight crossing paths at non-signalized junctions
+6/053 1 3 152 149,ego-car goes straight crossing paths at non-signalized junctions
+6/053 1 11 160 149,ego-car goes straight crossing paths at non-signalized junctions
+6/054 1 0 149 99,ego-car turns on a road
+6/055 1 0 149 100,ego-car turns left across path at non-signalized junctions
+6/056 1 0 149 56,ego-car turns on a road
+6/057 1 0 149 87,a motorbike crosses the road
+6/058 1 7 156 137,a motorbike changes lines into motorway
+6/058 1 8 157 137,a motorbike changes lines into motorway
+6/058 1 12 161 137,a motorbike changes lines into motorway
+6/058 1 1 150 137,a motorbike changes lines into motorway
+6/058 1 0 149 137,a motorbike changes lines into motorway
+7/006 1 250 399 392,ego-car goes straight at signalized junctions
+7/006 1 269 418 392,ego-car goes straight at signalized junctions
+7/006 1 244 393 392,ego-car goes straight at signalized junctions
+7/006 1 270 419 392,ego-car goes straight at signalized junctions
+7/006 1 261 410 392,ego-car goes straight at signalized junctions
+7/006 0 46 195 -1,ego-car goes straight at signalized junctions
+7/006 0 83 232 -1,ego-car goes straight at signalized junctions
+7/006 0 2 151 -1,ego-car goes straight at signalized junctions
+7/006 0 84 233 -1,ego-car goes straight at signalized junctions
+7/006 0 60 209 -1,ego-car goes straight at signalized junctions
+7/006 0 72 221 -1,ego-car goes straight at signalized junctions
+7/006 0 1 150 -1,ego-car goes straight at signalized junctions
+7/006 0 18 167 -1,ego-car goes straight at signalized junctions
+7/006 0 52 201 -1,ego-car goes straight at signalized junctions
+7/006 0 6 155 -1,ego-car goes straight at signalized junctions
+7/006 0 2 151 -1,ego-car goes straight at signalized junctions
+7/006 0 0 149 -1,ego-car goes straight at signalized junctions
+8/021 1 0 149 86,ego-car turns left across path at non-signalized junctions
+8/023 1 13 162 150,ego-car left turn across path at signalized junctions
+8/023 1 9 158 150,ego-car left turn across path at signalized junctions
+8/023 1 10 159 150,ego-car left turn across path at signalized junctions
+8/023 1 4 153 150,ego-car left turn across path at signalized junctions
+8/023 1 14 163 150,ego-car left turn across path at signalized junctions
+8/024 1 13 162 133,a motorbike overtakes
+8/024 1 3 152 133,a motorbike overtakes
+8/024 1 0 149 133,a motorbike overtakes
+8/025 1 0 149 107,lead vehicle stops
+9/009 1 105 254 237,a vehicle overtakes
+9/009 1 93 242 237,a vehicle overtakes
+9/009 1 93 242 237,a vehicle overtakes
+9/009 1 92 241 237,a vehicle overtakes
+9/009 1 113 262 237,a vehicle overtakes
+9/009 1 102 251 237,a vehicle overtakes
+9/010 1 0 149 126,a vehicle changes lanes with the same direction to ego-car
