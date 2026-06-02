@@ -1,4 +1,6 @@
-# 論文題目
+# A Driving Risk Prediction Framework Integrating Driver Attention and Large Language Models
+
+![overview](/Img/Overview.jpg)
 
 ## Setting up datasets
 * Download BDDA dataset following the instructions on [official websites](http://bdd-data.berkeley.edu/download.html).
@@ -8,6 +10,8 @@
 
 ---
 ## Driver Attention Module
+
+![DAM](/Img/DAM.jpg)
 
 Modified from [SCOUT+](https://github.com/ykotseruba/SCOUT). Those code removes certain parts of the training and inference code for SCOUT and SCOUT+. If you need these files, please refer to the original GitHub repository.
 
