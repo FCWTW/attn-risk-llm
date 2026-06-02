@@ -9,7 +9,7 @@
 * Download MM-AU dataset following the instructions on [huggingface](https://huggingface.co/datasets/JeffreyChou/MM-AU/tree/main).
 
 ---
-## Driver Attention Module
+## Driver Attention Module (DAM)
 
 ![DAM](/Img/DAM.jpg)
 
@@ -53,11 +53,11 @@ python3 MMAU_inference.py --config_dir /your_config --dataset_dir /MM-AU_root
 ```
 
 ---
-## Risk Assessment Module
+## Risk Assessment Module (RAM)
 Modified from：https://github.com/DeSinister/CycleCrash/
 
 You can find instructions on how to set up the environment [here](/RAM/README.md).
 
 ---
-## LLM Inference Module
+## LLM Inference Module (LIM)
 You can find instructions on how to set up the environment [here](/LIM/README.md).
