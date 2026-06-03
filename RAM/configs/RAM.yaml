@@ -1,0 +1,14 @@
+model_class: VidNeXt
+
+model_params:
+  img_size: [224, 224]
+  segment_length: 1
+  segment_overlap: 0.5
+
+train_params:
+  no_epochs: 50
+  batch_size: 4
+  early_stop: 15
+  lr: 0.000002
+  learning_rate_patience: 5
+  no_workers: 8
