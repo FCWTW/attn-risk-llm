@@ -70,7 +70,8 @@ class VideoEncoder(nn.Module):
             self.vid_trans.blocks[-1].proj = nn.Identity()
             embed_dims = 2048
 
-        self.bn1 = nn.BatchNorm1d(embed_dims, eps=1e-5)
+        # self.bn1 = nn.BatchNorm1d(embed_dims, eps=1e-5)
+        self.bn1 = nn.GroupNorm(num_groups=32, num_channels=1024)
         self.fc1 = nn.Linear(embed_dims, 2)
         self.drop = nn.Dropout(p=0.25)
 

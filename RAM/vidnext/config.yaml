@@ -1,5 +1,5 @@
 
-dropout_cfg: 0.05 # Dropout probability
+dropout_cfg: 0.3 # Dropout probability
 factor: 3 # Attention Factor
 d_layers: 1 # Number of Decoder Layers
 e_layers: 2 # Number of Encoder Layers

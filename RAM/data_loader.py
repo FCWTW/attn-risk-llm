@@ -1,30 +1,20 @@
 import cv2
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 import pandas as pd
-import numpy as np
-from torchvision import transforms
-from torch.utils.data import DataLoader
 from torchvision import transforms as video_transforms
-import time
-import plotly.graph_objects as go
 import os
 from tqdm import tqdm
-import random
 from utils import parse_timestamp, subtract_timestamps, uniform_frame_sampling, pad_tensor
 
-
-
 class FetchData():
-    def __init__(self, txt_path, set_name='train', length=None, segment_duration=1, segment_interval=0.5, target_size=(224, 224), future_sight = 1, after_acc = True, strategy='full'):
+    def __init__(self, txt_path, set_name='train', length=None, segment_duration=1, segment_interval=0.5, target_size=(224, 224), after_acc = True, strategy='full'):
         self.set_name = set_name
         self.segment_duration = segment_duration
         self.segment_interval = segment_interval
         self.target_size = target_size
         self.frames_list = []
         self.labels = []
-        self.future_sight = future_sight
         self.after_acc = after_acc
         self.num_classes = 2
         
@@ -63,12 +53,6 @@ class FetchData():
             parsed_data, 
             columns=['video_id', 'label', 'start_frame', 'end_frame', 'toa']
         )
-        # self.df = pd.read_csv(
-        #     full_txt_path, 
-        #     sep=' ', 
-        #     header=None, 
-        #     names=['video_id', 'label', 'start_frame', 'end_frame', 'toa']
-        # )
         
         if file_name == 'full_test.txt':
             self.is_dada = 0
@@ -102,8 +86,8 @@ class FetchData():
     def create_time_segments(self, vid_name, start_frame, end_frame, accident_frame, label, is_dada, fps=30):
         time_segments = []
         vid_segments = []
-        window_size = int(self.segment_duration * fps) # 30 幀
-        step_size = int(self.segment_interval * fps)   # 步長
+        window_size = int(self.segment_duration * fps)
+        step_size = int(self.segment_interval * fps)
         
         segment_len = end_frame - start_frame + 1
         
@@ -130,6 +114,11 @@ class FetchData():
         time_segments = torch.stack([torch.tensor(x, dtype=torch.float32) for x in time_segments])
         return time_segments, vid_segments
 
+    def create_test_segment(self, vid_name, start_frame, end_frame, accident_frame, label, is_dada):
+        label_info = torch.tensor([[label, end_frame, accident_frame]], dtype=torch.float32)
+        vid_info = [[vid_name, start_frame, end_frame, is_dada]]
+        return label_info, vid_info
+
     def prepare_data(self):
         for i in tqdm(range(self.length_videos)):           
             # 讀取 .txt 解析出來的對應欄位資料
@@ -140,7 +129,11 @@ class FetchData():
             vid_name = str(self.df['video_id'].iloc[i])        
             is_dada = self.is_dada
 
-            temp = self.create_time_segments(vid_name, start_frame, end_frame, toa, label, is_dada)
+            # if self.set_name == 'test':
+            #     temp = self.create_test_segment(vid_name, start_frame, end_frame, toa, label, is_dada)
+            # else:
+            #     temp = self.create_time_segments(vid_name, start_frame, end_frame, toa, label, is_dada)
+            temp = self.create_test_segment(vid_name, start_frame, end_frame, toa, label, is_dada)
             if temp is not None:
                 self.frames_list.extend(temp[1])
                 self.labels.append(temp[0])
@@ -158,7 +151,7 @@ def load_frame_sequence(vid_info, root_dir='/home/wayne/Documents/MMAU/', target
     frames = []
     last_valid_img = None
     
-    for f_idx in range(int(start_frame), int(end_frame)):
+    for f_idx in range(int(start_frame), int(end_frame)+1):
         current_frame_idx = f_idx + 1 
         
         if is_dada:
@@ -174,15 +167,11 @@ def load_frame_sequence(vid_info, root_dir='/home/wayne/Documents/MMAU/', target
         
         if img is None:
             if last_valid_img is not None:
-                # 後面的幀遺失，複製前一幀
                 img = last_valid_img.copy()
             else:
-                # 【關鍵修改】第一張圖就讀不到！這段影片不乾淨，直接放棄並回傳 None
                 return None
         else:
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            
-            # 等比例縮放
             h, w = img.shape[:2]
             min_edge = min(h, w)
             target_min = 720
@@ -198,11 +187,9 @@ def load_frame_sequence(vid_info, root_dir='/home/wayne/Documents/MMAU/', target
         frames.append(img_tensor)
         
     video_tensor = torch.stack(frames)
-    
     if target_frames is not None:
         indices = torch.linspace(0, len(video_tensor) - 1, target_frames).long()
         video_tensor = video_tensor[indices]
-        
     return video_tensor
 
 class TrainCollator():
@@ -227,10 +214,14 @@ class TrainCollator():
         valid_labels = []
         valid_times = []
         valid_toas = []
+        segment_duration = None
 
         # 逐一檢查 Batch 裡面的每一筆資料
         for item in batch:
             vid_info, label, time_idx, toa = item
+            if segment_duration is None:
+                _, start_frame, end_frame, _ = vid_info
+                segment_duration = int(end_frame) - int(start_frame) +1
             if self.model_type in ['TimeSformer', 'ViViT']:
                 video_tensor = load_frame_sequence(vid_info, root_dir=self.root_dir, target_frames=16)
             else:
@@ -247,7 +238,7 @@ class TrainCollator():
         if len(valid_videos) == 0:
             print("⚠️ 警告：此 Batch 所有資料皆損壞，已跳過。")
             # 隨便回傳一個 shape 合法的 Dummy Tensor 防止程式當掉 (這個 batch 的 loss 會被 optimizer 忽視)
-            dummy_video = torch.zeros((1, 30, 3, self.target_size[0], self.target_size[1]))
+            dummy_video = torch.zeros((1, segment_duration, 3, self.target_size[0], self.target_size[1]))
             return dummy_video.permute(*dims_shape), torch.tensor([0]), torch.tensor([0]), torch.tensor([0])
 
         # 安全地把「乾淨的影片」做轉換與堆疊
@@ -277,10 +268,13 @@ class ValCollator():
         valid_labels = []
         valid_times = []
         valid_toas = []
+        segment_duration = None
 
         for item in batch:
             vid_info, label, time_idx, toa = item
-
+            if segment_duration is None:
+                _, start_frame, end_frame, _ = vid_info
+                segment_duration = int(end_frame) - int(start_frame) + 1
             if self.model_type in ['TimeSformer', 'ViViT']:
                 video_tensor = load_frame_sequence(vid_info, root_dir=self.root_dir, target_frames=16)
             else:
@@ -295,10 +289,56 @@ class ValCollator():
 
         if len(valid_videos) == 0:
             print("⚠️ 警告：此測試 Batch 所有資料皆損壞，已跳過。")
-            dummy_video = torch.zeros((1, 30, 3, self.target_size[0], self.target_size[1]))
+            dummy_video = torch.zeros((1, segment_duration, 3, self.target_size[0], self.target_size[1]))
             return dummy_video.permute(*dims_shape), torch.tensor([0]), torch.tensor([0]), torch.tensor([0])
 
         transformed_video = torch.stack([val_trans(video) for video in valid_videos])
+        return transformed_video.permute(*dims_shape), torch.tensor(valid_labels), torch.tensor(valid_times), torch.tensor(valid_toas)
+
+class TestCollator():
+    def __init__(self, model_type, target_size, root_dir):
+        self.model_type = model_type
+        self.target_size = target_size
+        self.root_dir = root_dir
+        
+    def __call__(self, batch):
+        if self.model_type in ['VidNeXt', 'ConvNeXtVanillaTransformer', 'ResNetNSTtransformer', 'ViViT']:
+            dims_shape = [0, 1, 2, 3, 4] 
+        else:
+            dims_shape = [0, 2, 1, 3, 4] 
+            
+        test_trans = video_transforms.Compose([
+            video_transforms.Resize(self.target_size, antialias=True),
+            video_transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ])
+
+        valid_videos = []
+        valid_labels = []
+        valid_times = []
+        valid_toas = []
+        segment_duration = None
+
+        for item in batch:
+            vid_info, label, time_idx, toa = item
+            if segment_duration is None:
+                _, start_frame, end_frame, _ = vid_info
+                segment_duration = int(end_frame) - int(start_frame) + 1
+            if self.model_type in ['TimeSformer', 'ViViT']:
+                video_tensor = load_frame_sequence(vid_info, root_dir=self.root_dir, target_frames=16)
+            else:
+                video_tensor = load_frame_sequence(vid_info, root_dir=self.root_dir)
+
+            if video_tensor is not None:
+                valid_videos.append(video_tensor)
+                valid_labels.append(label)
+                valid_times.append(time_idx)
+                valid_toas.append(toa)
+
+        if len(valid_videos) == 0:
+            print("⚠️ 警告：此測試 Batch 所有資料皆損壞，已跳過。")
+            dummy_video = torch.zeros((1, segment_duration, 3, self.target_size[0], self.target_size[1]))
+            return dummy_video.permute(*dims_shape), torch.tensor([0]), torch.tensor([0]), torch.tensor([0])
+        transformed_video = torch.stack([test_trans(video) for video in valid_videos])
         return transformed_video.permute(*dims_shape), torch.tensor(valid_labels), torch.tensor(valid_times), torch.tensor(valid_toas)
 
 if __name__ == "__main__":

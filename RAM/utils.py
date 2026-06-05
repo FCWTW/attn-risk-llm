@@ -140,80 +140,14 @@ class ExponentialLoss(nn.Module):
         loss = torch.mean(torch.add(torch.mul(pos_loss, target[:, 1]), torch.mul(neg_loss, target[:, 0])))
         return loss
 
-def train_model(model, loader, optimizer, loss_fn, device, scaler, metric, metric2, opt_step_size=1, model_type='vidnext'):
-    # Intializing starting Epoch loss as 0
-    loss_for_epoch = 0.0 
-    score = 0.0   
-    score2 = 0.0   
-    # Model to be used in Training Mode
-    model.train()
-
-    for batch in tqdm(loader):
-        x, y, time_idx, toa = batch
-        time_idx = time_idx.to(device)
-        toa = toa.to(device)
-
-        # Storing the Images to the Device
-        x = x.to(device, dtype=torch.float16)
-        y = y.to(device)
-        optimizer.zero_grad()
-
-        # Using Unscaled Mixed Precision using half Bit for Faster Processing
-        with torch.autocast(device_type="cuda", dtype=torch.float16):
-            # Get Predictions from Model
-            y_pred = model(x)
-
-            # Calculate the loss
-            # 假設修改後的 VidNeXt 的輸出是 [Batch, 1]，因此要將 y 變成 One-hot 格式
-            if len(y.shape) == 1:
-                y_onehot = F.one_hot(y.long(), num_classes=2).float()
-            else:
-                y_onehot = y
-            # 確保 y_pred 是 [Batch, 2]
-            if y_pred.shape[1] == 1: 
-                # 如果模型只輸出 1 個值，我們需要把它變成 2 個值的 logits (這比較少見，通常設 num_classes=2)
-                # 這裡假設你的 get_model 會因為 task='ex' 而設定 num_classes=2
-                pass
-            loss = loss_fn(y_pred, y_onehot, time_idx, toa)
-
-            # y_pred 是 Logits -> Softmax -> 取第二個欄位 (事故機率)
-            probs = torch.softmax(y_pred, dim=1)[:, 1]
-            
-            # Metric 庫通常吃 (preds, target)
-            # BinaryAccuracy 吃 (prob, label_idx)
-            score += metric(probs, y) 
-            score2 += metric2(probs, y)
-        # Scale Loss Backwards
-        scaler.scale(loss).mean().backward()
-
-        # Unscale the Gradients in Optimizer
-        scaler.unscale_(optimizer)
-
-        # Clip the Gradients to they dontreach inf
-        torch.nn.utils.clip_grad_norm_(model.parameters(), 10)
-        scaler.step(optimizer)
-        
-        # Update the Scaler
-        scaler.update()
-
-        # Add the Loss for every sample in a Batch
-        loss_for_epoch += loss.item()
-    # Calculating The Average Loss for the Epoch
-    loss_for_epoch =  torch.div(loss_for_epoch, len(loader))
-    score =  torch.div(score, len(loader))
-    score2 =  torch.div(score2, len(loader))
-    return loss_for_epoch, score, score2
-
-# Function to Evaluate the Model
 def evaluate_model(model, loader, loss_fn, device, metric, metric2):
-    # Intializing starting Epoch loss as 0
     total_loss = 0.0
-    score = 0.0
-    score2 = 0.0
-    # Model to be used in Evaluation Mode
     model.eval()
 
-    # Gradients are not calculated
+    # 【核心修正 1】在驗證開始前，強制清空計數器，切斷與訓練集或歷史輪次的污染
+    metric.reset()
+    metric2.reset()
+
     with torch.no_grad():
         for batch in tqdm(loader):
             x, y, time_idx, toa = batch
@@ -227,14 +161,127 @@ def evaluate_model(model, loader, loss_fn, device, metric, metric2):
             # One-hot encoding for Loss
             y_onehot = F.one_hot(y.long(), num_classes=2).float()
             loss = loss_fn(y_pred, y_onehot, time_idx, toa)
-            # Metric
-            probs = torch.softmax(y_pred, dim=1)[:, 1]
-            score += metric(probs, y)
-            score2 += metric2(probs, y)
             total_loss += loss.item()
-        # Calculating The Average Loss for the Epoch
-        total_loss =  torch.div(total_loss, len(loader))
-        score =  torch.div(score, len(loader))
-        score2 =  torch.div(score2, len(loader))
+            
+            # 【核心修正 2】使用 .update() 餵入數據，讓指標在內部累積混淆矩陣的原始數值
+            probs = torch.softmax(y_pred, dim=1)[:, 1]
+            metric.update(probs, y)
+            metric2.update(probs, y)
+            
+        # 【核心修正 3】整個 Epoch 結束後，呼叫 .compute() 算出唯一且正確的全域指標
+        epoch_f1 = metric.compute()
+        epoch_acc = metric2.compute()
         
-    return total_loss, score, score2
+        total_loss = torch.div(total_loss, len(loader))
+        
+    return total_loss, epoch_f1, epoch_acc
+
+def train_model(model, loader, optimizer, loss_fn, device, scaler, metric, metric2, *args, **kwargs):
+    # 初始化這一輪的總損失為 0
+    loss_for_epoch = 0.0 
+    
+    # Model 進入訓練模式
+    model.train()
+
+    # 【核心修正 1】在這一輪訓練開始前，強制清空計數器，切斷歷史輪次的統計污染
+    metric.reset()
+    metric2.reset()
+
+    for batch in tqdm(loader):
+        x, y, time_idx, toa = batch
+        time_idx = time_idx.to(device)
+        toa = toa.to(device)
+
+        # 儲存影像到設備
+        x = x.to(device, dtype=torch.float16)
+        y = y.to(device)
+        optimizer.zero_grad()
+
+        # 使用混合精度加速
+        with torch.autocast(device_type="cuda", dtype=torch.float16):
+            # 取得模型預測值 (Logits)
+            y_pred = model(x)
+
+            # 計算損失
+            if len(y.shape) == 1:
+                y_onehot = F.one_hot(y.long(), num_classes=2).float()
+            else:
+                y_onehot = y
+            loss = loss_fn(y_pred, y_onehot, time_idx, toa)
+
+            # y_pred 是 Logits -> Softmax -> 取第二個欄位 (事故機率)
+            probs = torch.softmax(y_pred, dim=1)[:, 1]
+            
+            # 【核心修正 2】改用 .update() 餵入數據，讓 TorchMetrics 在內部老實累積混淆矩陣
+            metric.update(probs, y)
+            metric2.update(probs, y)
+
+        # 梯度反向傳播
+        scaler.scale(loss).mean().backward()
+        scaler.unscale_(optimizer)
+
+        # 梯度裁剪，防止梯度爆炸
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 10)
+        scaler.step(optimizer)
+        scaler.update()
+
+        # 累加 Batch 損失
+        loss_for_epoch += loss.item()
+
+    # 【核心修正 3】整個訓練集跑完後，呼叫 .compute() 算出數學上完全精準的全域 F1 與 Acc
+    epoch_f1 = metric.compute()
+    epoch_acc = metric2.compute()
+    
+    # 計算平均損失
+    loss_for_epoch = torch.div(loss_for_epoch, len(loader))
+    
+    return loss_for_epoch, epoch_f1, epoch_acc
+
+def test_model(model, loader, device):
+    """
+    用於測試期推論的函數。
+    核心邏輯：將模型輸出的片段級機率 (B, 2) 廣播至影格級維度 (B, T)，以符合 Benchmark 指標對 (N, T) 的要求。
+    
+    :param model: 封裝了 DataParallel 的 VideoEncoder 模型
+    :param loader: test_loader (測試集資料載入器)
+    :param device: 運算設備 (cuda 或 cpu)
+    :return: all_pred (N x T), all_labels (N,), all_toas (N,) 的 NumPy 陣列
+    """
+    model.eval()
+    all_pred = []
+    all_labels = []
+    all_toas = []
+    
+    # 從 loader 的 test_collate_fn 中安全取得模型型態，用來判定時間軸 T 的維度位置
+    model_type = getattr(loader.collate_fn, 'model_type', 'VidNeXt')
+    
+    with torch.no_grad():
+        for batch in tqdm(loader, desc="[Inference] Processing Batches"):
+            x, y, time_idx, toa = batch
+            x = x.to(device)
+            
+            # 模型前向傳播 (得到 Logits)
+            y_pred = model(x)
+            
+            # 計算事故預測機率 (過 Softmax 並取 index 1)，形狀為 (B,)
+            probs = torch.softmax(y_pred, dim=1)[:, 1].cpu().numpy()
+            
+            # 根據模型類型的維度排列方式，動態獲取當前影片的總影格數 T
+            if model_type in ['VidNeXt', 'ConvNeXtVanillaTransformer', 'ResNetNSTtransformer', 'ViViT']:
+                T = x.shape[2]  # 維度順序為 (B, C, T, H, W)
+            else:
+                T = x.shape[1]  # 維度順序為 (B, T, C, H, W)
+                
+            # 將片段級機率 (B,) 沿著時間軸複製 T 次，包裝成 Benchmark 需要的影格級機率 (B, T)
+            pred_frames = np.repeat(probs[:, np.newaxis], T, axis=1)
+            
+            all_pred.append(pred_frames)
+            all_labels.append(y.cpu().numpy())
+            all_toas.append(toa.cpu().numpy())
+            
+    # 將所有 Batch 的資料在第 0 維度集計、拼接成全域的大矩陣
+    all_pred = np.concatenate(all_pred, axis=0)    # 最終形狀: (N, T)
+    all_labels = np.concatenate(all_labels, axis=0)  # 最終形狀: (N,)
+    all_toas = np.concatenate(all_toas, axis=0)      # 最終形狀: (N,)
+    
+    return all_pred, all_labels, all_toas

@@ -1,5 +1,5 @@
 import cv2
-import torch
+from datetime import datetime
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -31,8 +31,16 @@ class Train:
         self.train_params = self.configs['train_params']
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.run_dir = os.path.join('train_run', timestamp)
+        os.makedirs(self.run_dir, exist_ok=True)
+        
+        self.log_file_path = os.path.join(self.run_dir, 'train_log.csv')
+        with open(self.log_file_path, 'w', encoding='utf-8') as f:
+            f.write("Epoch,Train_Loss,Train_F1,Train_Acc,Val_Loss,Val_F1,Val_Acc,Duration\n")
+
         # Setup dataloader
-        train_dataset = FetchData(self.configs_dir, set_name='train', segment_duration=self.model_params['segment_length'], segment_interval=self.model_params['segment_overlap'], target_size=self.model_params['img_size'], future_sight=1, after_acc=True)
+        train_dataset = FetchData(self.configs_dir, set_name='train', segment_duration=self.model_params['segment_length'], segment_interval=self.model_params['segment_overlap'], target_size=self.model_params['img_size'], after_acc=True, strategy=self.train_params['strategy'])
         train_collate_fn = TrainCollator(model_type=self.model_type, target_size=self.model_params['img_size'], root_dir=dataset_dir)
         self.train_loader = DataLoader(
             dataset=train_dataset,
@@ -44,7 +52,7 @@ class Train:
             collate_fn=train_collate_fn,
         )
         self.num_classes = train_dataset.num_classes
-        val_dataset = FetchData(self.configs_dir, set_name='val', segment_duration=self.model_params['segment_length'], segment_interval=self.model_params['segment_overlap'], target_size=self.model_params['img_size'], future_sight=1, after_acc=True)
+        val_dataset = FetchData(self.configs_dir, set_name='val', segment_duration=self.model_params['segment_length'], segment_interval=self.model_params['segment_overlap'], target_size=self.model_params['img_size'], after_acc=True)
         val_collate_fn = ValCollator(model_type=self.model_type, target_size=self.model_params['img_size'], root_dir=dataset_dir)
         self.val_loader = DataLoader(
             dataset=val_dataset,
@@ -61,8 +69,14 @@ class Train:
         self.model = VideoEncoder(model_type=self.model_type, num_classes=self.num_classes, segment_length=self.model_params['segment_length'])
         self.model = nn.DataParallel(self.model)
         self.model.to(self.device)
-        self.optimizer = torch.optim.AdamW(params=self.model.parameters(), lr=self.train_params['lr'])
-        # scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, 'min', patience=self.train_params['learning_rate_patience'], verbose=True)
+        self.optimizer = torch.optim.AdamW(params=self.model.parameters(), lr=self.train_params['lr'], weight_decay=0.1)
+        
+        # 【核心修改 1】重新啟用並優化 Scheduler 設定
+        self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+            self.optimizer, 
+            mode='max', 
+            patience=self.train_params['learning_rate_patience']
+        )
 
     def load_config(self, config_file):
         with open(config_file, 'r') as fid:
@@ -75,7 +89,6 @@ class Train:
         metric = BinaryF1Score().to(self.device)
         metric2 = BinaryAccuracy().to(self.device)
         highest_score = 0
-        lowest_loss = np.inf
         training_loss = []
         training_score = []
         training_score2 = []
@@ -90,7 +103,7 @@ class Train:
             start = time.time()
 
             # Train the Model for Every epoch
-            train_value = train_model(self.model, self.train_loader, self.optimizer, loss_function, self.device, scaler, metric, metric2, opt_step_size=1, model_type=self.model_type)
+            train_value = train_model(self.model, self.train_loader, self.optimizer, loss_function, self.device, scaler, metric, metric2)
             training_loss.append(train_value[0].detach().cpu())
             training_score.append(train_value[1].detach().cpu())
             training_score2.append(train_value[2].detach().cpu())
@@ -106,57 +119,38 @@ class Train:
                 bad_epochs = 0
                 print(f"Val F1-Score improved from {highest_score:.4f} to {val_score[-1]:.4f}")
                 highest_score = val_score[-1]
-                model_name = f'{self.model_type}_epoch{epoch}_F1_{highest_score:.4f}.pt'
-                torch.save(self.model.module.state_dict(), os.path.join(self.configs_dir, model_name))
+                model_name = f'{self.model_type}_epoch{epoch+1}_F1_{highest_score:.4f}.pt'
+                torch.save(self.model.module.state_dict(), os.path.join(self.run_dir, model_name))
             else:
                 bad_epochs += 1
             end = time.time()
             minutes, seconds = epoch_time(start, end)
 
+            # 【核心修改 2】更新學習率調度器狀態
+            self.scheduler.step(val_score[-1])
+            current_lr = self.optimizer.param_groups[0]['lr']
+
             # Report Training and Val Loss
             print(f"Epoch Number: {epoch+1}")
             print(f"Duration: {minutes}m {seconds}s")
-            print(f"Training Loss: {training_loss[-1]}")
-            print(f"Training Score (F1): {training_score[-1]}")
-            print(f"Training Score (Acc): {training_score2[-1]}")
-            print(f"Val Loss: {val_loss[-1]}")
-            print(f"Val Score (F1): {val_score[-1]}")
-            print(f"Val Score (Acc): {val_score2[-1]}")
+            print(f"Training Loss: {training_loss[-1]:.4f}")
+            print(f"Training Score (F1): {training_score[-1]:.4f}")
+            print(f"Training Score (Acc): {training_score2[-1]:.4f}")
+            print(f"Val Loss: {val_loss[-1]:.4f}")
+            print(f"Val Score (F1): {val_score[-1]:.4f}")
+            print(f"Val Score (Acc): {val_score2[-1]:.4f}")
+            print(f"Current Learning Rate: {current_lr:.8f}") # 印出當前 LR 方便追蹤
+            print()
+
+            with open(self.log_file_path, 'a', encoding='utf-8') as f:
+                f.write(f"{epoch+1},{training_loss[-1]:.4f},{training_score[-1]:.4f},{training_score2[-1]:.4f},"
+                        f"{val_loss[-1]:.4f},{val_score[-1]:.4f},{val_score2[-1]:.4f},{minutes}m {seconds}s\n")
 
             # If Patience Level reached for Model not Performing better
             if bad_epochs == self.train_params['early_stop']:
                 print("Stopped Early. The Model is not improving over val loss")
                 end_epoch = epoch
                 break
-
-        epochs = [x+1 for x in range(len(training_loss))]
-        fig = go.Figure()
-        fig.add_trace(go.Scatter(x=epochs, y=training_loss, mode='lines', name='Train Loss'))
-        fig.add_trace(go.Scatter(x=epochs, y=val_loss, mode='lines', name='val Loss'))
-        fig.update_layout(title='Training Metrics',
-                        xaxis_title='Epochs',
-                        yaxis_title='Metrics',
-                        legend=dict(x=0, y=1, traceorder='normal'))
-
-        fig.write_html('regression_loss.html')
-        fig1 = go.Figure()
-        fig1.add_trace(go.Scatter(x=epochs, y=training_score, mode='lines', name='Training Score'))
-        fig1.add_trace(go.Scatter(x=epochs, y=val_score, mode='lines', name='val Score'))
-        fig1.update_layout(title='Val Metrics',
-                        xaxis_title='Epochs',
-                        yaxis_title='Metrics',
-                        legend=dict(x=0, y=1, traceorder='normal'))
-        fig1.write_html('regression_score.html')
-
-        fig2 = go.Figure()
-        fig2.add_trace(go.Scatter(x=epochs, y=training_score2, mode='lines', name='Train Accuracy'))
-        fig2.add_trace(go.Scatter(x=epochs, y=val_score2, mode='lines', name='Val Accuracy'))
-        fig2.update_layout(title='Accuracy Metrics',
-                        xaxis_title='Epochs',
-                        yaxis_title='Accuracy',
-                        legend=dict(x=0, y=1, traceorder='normal'))
-        fig2.write_html('regression_accuracy.html')
-        fig.show()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
