@@ -6,7 +6,6 @@ import torch
 from mmseg.apis import inference_model, init_model, show_result_pyplot
 from tqdm import tqdm  # 加入 tqdm
 
-
 CONFIG_FILE = '/home/wayne/Documents/Progress/mmsegmentation/configs/mask2former/mask2former_swin-l-in22k-384x384-pre_8xb2-90k_cityscapes-512x1024.py'
 CHECKPOINT_FILE = 'mask2former_swin-l-in22k-384x384-pre_8xb2-90k_cityscapes-512x1024_20221202_141901-28ad20f1.pth'
 BASE_ROOT = '/home/wayne/Documents/MMAU'

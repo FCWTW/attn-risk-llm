@@ -1,6 +1,6 @@
 # A Driving Risk Prediction Framework Integrating Driver Attention and Large Language Models
 
-![overview](/Img/Overview.jpg)
+![overview](/image/Overview.png)
 
 ## Setting up datasets
 * Download BDDA dataset following the instructions on [official websites](http://bdd-data.berkeley.edu/download.html).
@@ -11,7 +11,7 @@
 ---
 ## Driver Attention Module (DAM)
 
-![DAM](/Img/DAM.jpg)
+![DAM](/image/DAM.png)
 
 Modified from [SCOUT+](https://github.com/ykotseruba/SCOUT). Those code removes certain parts of the training and inference code for SCOUT and SCOUT+. If you need these files, please refer to the original GitHub repository.
 
@@ -54,10 +54,16 @@ python3 MMAU_inference.py --config_dir /your_config --dataset_dir /MM-AU_root
 
 ---
 ## Risk Assessment Module (RAM)
+
+![RAM](/image/RAM.png)
+
 Modified from：https://github.com/DeSinister/CycleCrash/
 
 You can find instructions on how to set up the environment [here](/RAM/README.md).
 
 ---
 ## LLM Inference Module (LIM)
+
+![LIM](/image/LIM.png)
+
 You can find instructions on how to set up the environment [here](/LIM/README.md).
