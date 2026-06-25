@@ -7,9 +7,9 @@ import pandas as pd  # 補上 pandas 載入
 import torch
 from tqdm import tqdm
 from PIL import Image
-from core.raft import RAFT
-from core.utils import flow_viz
-from core.utils.utils import InputPadder
+from RAFT.core.raft import RAFT
+from RAFT.core.utils import flow_viz
+from RAFT.core.utils.utils import InputPadder
 
 ROOT_DIR = "/home/wayne/Documents/MMAU"
 DEVICE = 'cuda'
