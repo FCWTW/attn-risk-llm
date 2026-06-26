@@ -30,7 +30,7 @@ python3 train.py --config_dir /your_config.yaml
 ```
 
 ### Testing the model
-Place the config file and model weights in /your_config, then run the following command for:
+Place the config file and model weights in /your_config, then run the following command for testing:
 ```bash
 python3 test.py --config_dir /your_config --evaluate
 ```
