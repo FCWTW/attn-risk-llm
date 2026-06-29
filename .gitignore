@@ -3,3 +3,5 @@
 /DAM/network/__pycache__
 /DAM/data_utils/__pycache__
 /DAM/cache
+
+*.log
