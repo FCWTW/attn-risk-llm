@@ -5,3 +5,6 @@
 /DAM/cache
 
 *.log
+/RAM/__pycache__
+/RAM/models/__pycache__
+/RAM/feat_extract/src/__pycache__

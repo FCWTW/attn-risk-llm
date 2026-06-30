@@ -1,0 +1,20 @@
+model_params:
+  h_dim: 256
+  x_dim: 2048
+
+train_params:
+  strategy: full  # full or mini
+  no_epochs: 22
+  batch_size: 1
+  lr: 0.001
+  resume: False
+  ckpt_file: None
+  
+  early_stop: 10
+  learning_rate_patience: 2
+  no_workers: 4
+
+test_params:
+  strategy: full  # full or mini
+  batch_size: 2
+  no_workers: 8

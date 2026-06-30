@@ -173,7 +173,7 @@ def process_features(root_dir, flow_root_dir, configs_dir):
 if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.abspath(__file__))
     RAM_dir = os.path.dirname(current_dir)
-    configs_dir = os.path.join(RAM_dir, "configs")
+    configs_dir = os.path.join(RAM_dir, "config")
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--root_dir', default="/home/wayne/Documents/MMAU", help="Path to MM-AU dataset")

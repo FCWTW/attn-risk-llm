@@ -204,7 +204,7 @@ def process_txt(path, yolo_model, raft_model, root_dir, output):
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     RAM_dir = os.path.dirname(current_dir)
-    configs_dir = os.path.join(RAM_dir, "configs")
+    configs_dir = os.path.join(RAM_dir, "config")
     raft_path = os.path.join(current_dir, "raft-kitti.pth")
 
     parser = argparse.ArgumentParser()

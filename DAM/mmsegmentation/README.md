@@ -1,5 +1,3 @@
-# Deployment details for generating semantic segmentation maps
-
 ```bash
 conda create --name mmseg python=3.8
 conda activate mmseg
