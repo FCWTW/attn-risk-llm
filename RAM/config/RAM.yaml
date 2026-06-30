@@ -9,6 +9,7 @@ train_params:
   lr: 0.001
   resume: False
   ckpt_file: None
+  tl: False
   
   early_stop: 10
   learning_rate_patience: 2

@@ -36,6 +36,7 @@ class Train:
         os.makedirs(self.output_dir, exist_ok=True)
         
         # Setup Logging
+        print('-> Initializing the log file...')
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s [%(levelname)s] %(message)s',
@@ -45,6 +46,7 @@ class Train:
             ]
         )
         self.logger = logging.getLogger(__name__)
+        self.logger.info(f"Config File: {config_file} | Output Dir : {os.path.abspath(self.output_dir)} | Learning Rate: {self.train_params['lr']}")
 
         self.x_dim = self.model_params['x_dim']
         self.h_dim = self.model_params['h_dim']
@@ -53,6 +55,7 @@ class Train:
         
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
         
+        print('-> Building data loader...')
         train_data = MyDataset(self.data_dir, os.path.dirname(config_file), 'train', self.train_params['strategy'], toTensor=True, device=self.device)
         val_data = MyDataset(self.data_dir, os.path.dirname(config_file), 'val', self.train_params['strategy'], toTensor=True, device=self.device)
         
@@ -63,6 +66,7 @@ class Train:
             dataset=val_data, batch_size=self.train_params['batch_size'], shuffle=False, drop_last=True
         )
 
+        print('-> Building model...')
         self.model = RiskyObject(self.x_dim, self.h_dim, self.n_frame, self.fps) 
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.train_params['lr'])
         self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
@@ -95,9 +99,9 @@ class Train:
             start_epoch = checkpoint['epoch']
             self.model.load_state_dict(checkpoint['model'])
             self.optimizer.load_state_dict(checkpoint['optimizer'])
-            self.logger.info(f"Checkpoint loaded from {filename} (epoch {start_epoch})")
+            self.logger.info(f"-> Checkpoint loaded from {filename} (epoch {start_epoch})")
         else:
-            self.logger.warning(f"=> no checkpoint found at '{filename}'")
+            self.logger.warning(f"[ERROR] no checkpoint found at '{filename}'")
         return start_epoch
 
     def train_epoch(self, epoch):
@@ -181,7 +185,7 @@ class Train:
                 'model': self.model.state_dict(),
                 'optimizer': self.optimizer.state_dict()
             }, best_auc_file)
-            self.logger.info(f"Best AUC Model saved: {best_auc_file}")
+            self.logger.info(f"-> Best AUC Model saved: {best_auc_file}")
             
         if ap > self.ap_max:
             self.ap_max = ap
@@ -191,7 +195,7 @@ class Train:
                 'model': self.model.state_dict(),
                 'optimizer': self.optimizer.state_dict()
             }, best_ap_file)
-            self.logger.info(f"Best AP Model saved: {best_ap_file}")
+            self.logger.info(f"-> Best AP Model saved: {best_ap_file}")
 
         return loss_val
 
@@ -199,10 +203,11 @@ class Train:
         start_epoch = -1
         
         if self.train_params.get('resume', False):
+            print(f'-> Resume from checkpoint...')
             start_epoch = self._load_checkpoint(self.train_params.get('ckpt_file', ''))
 
         if self.train_params.get('tl', False):
-            self.logger.info("Applying transfer learning. Freezing base layers...")
+            print('-> Applying transfer learning. Freezing base layers...')
             for name, param in self.model.named_parameters():
                 if 'dense1' in name or 'dense2' in name or 'soft_attention' in name or 'soft_attention_cor' in name:
                     param.requires_grad = True
