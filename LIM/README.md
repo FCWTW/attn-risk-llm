@@ -1,4 +1,6 @@
-# Deployment details for LLM Inference Module
+# LLM Inference Module
+
+## Deployment Details for LLM Inference Module
 ```bash
 # In conda env python 3.10
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
@@ -11,3 +13,8 @@ Use the following command to test your environment:
 ```bash
 python3 .check.py
 ```
+
+---
+## Result Showcase
+
+coming soon...

@@ -1,4 +1,6 @@
-# Deployment details for Driver Attention Module
+# Driver Attention Module
+
+## Deployment details for Driver Attention Module
 
 1. Define the following paths in ~/.bashrc：
 ```bash
@@ -14,10 +16,10 @@ export CODE_FOLDER="/home/wayne/Documents/Progress/SCOUT"
 
 4. You can modify the model type, dataset type, and training parameters in [/config/DAM.yaml](/DAM/config/DAM.yaml).
 
-5. Before training or testing, you need to process the BDDA dataset using [mmsegmentation](/mmsegmentation/process_BDDA.py).
+5. Before training or testing, you need to process the BDDA dataset using [mmsegmentation](/DAM/mmsegmentation/process_BDDA.py).
 
 ---
-## Prepare for MM-AU dataset
+## Inference on MM-AU dataset
 
 ```
 MM-AU # root of your MM-AU
@@ -42,6 +44,11 @@ MM-AU # root of your MM-AU
 ```
 1. Please organize the dataset according to the above structure.
 
-2. Next, use [/mmsegmentation/process_MMAU.py](/mmsegmentation/process_MMAU.py) to generate a semantic segmentation map of the dataset.
+2. Next, use [/mmsegmentation/process_MMAU.py](/DAM//mmsegmentation/process_MMAU.py) to generate a semantic segmentation map of the dataset.
 
 3. Eventually, use [MMAU_inference.py](/DAM/scripts/MMAU_inference.py) to perform DAM inference.
+
+---
+## Results Showcase
+
+coming soon...
