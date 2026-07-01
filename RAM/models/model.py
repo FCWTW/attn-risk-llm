@@ -136,7 +136,7 @@ class RiskyObject(nn.Module):
         self.n_layers_cor = 1
         self.h_dim_cor = 32
         self.gru_net = GRUNet(h_dim+h_dim, h_dim, 2, self.n_layers, self.h_dim_cor)
-        self.weight = torch.Tensor([0.5, 1]).cuda()  # TO-DO: find the correct weight
+        self.weight = torch.Tensor([0.1, 1]).cuda()  # TO-DO: find the correct weight
 
         # input dim 4
         self.gru_net_cor = CorGRU(4, self.h_dim_cor, self.n_layers_cor)

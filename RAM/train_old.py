@@ -9,7 +9,6 @@ import torch
 from torch.utils.data import DataLoader
 from models.model import RiskyObject
 from models.evaluation import evaluation, plot_auc_curve, plot_pr_curve, frame_auc
-from models.evaluation import evaluate_earliness, official_evaluation
 from dataloader import MyDataset
 import argparse
 from tqdm import tqdm
@@ -18,7 +17,6 @@ import logging
 import numpy as np
 import csv
 import yaml
-from sklearn.metrics import roc_auc_score
 
 seed = 123
 np.random.seed(seed)
@@ -147,103 +145,60 @@ class Train:
         lr = self.optimizer.param_groups[0]['lr']
         self.logger.info(f"Epoch [{epoch}] Train Loss: {avg_loss:.4f} | LR: {lr}")
         return avg_loss
-    
+
     def val_epoch(self, epoch):
         self.model.eval()
         losses_all = []
-        
-        # ─── 🔥 論文對齊矩陣收集器 ───
-        all_pred_list = []      # 最終會轉成 N x T 的矩陣
-        all_labels_list = []    # 最終會轉成 (N,) 的一維陣列 [1, 0, 1...]
-        all_toas_list = []      # 最終會轉成 (N,) 的一維陣列 [t_ai, t_ai...]
-
-        loop = tqdm(enumerate(self.val_dataloader), total=len(self.val_dataloader), desc=f"Evaluating Epoch [{epoch}]")
+        all_pred = []
+        all_labels = []
+        loop = tqdm(enumerate(self.val_dataloader), total=len(self.val_dataloader), desc=f"Epoch [{epoch}/{self.train_params['epoch']}]")
 
         with torch.no_grad():
             for i, (batch_det, batch_toas, batch_flow, batch_vid) in loop:
-                total_bboxes = (batch_det[0, :, :, 0] != 0).sum().item()
-                
                 losses, all_outputs, labels = self.model(
-                    x=batch_flow, y=batch_det, toa=batch_toas, flow=batch_flow
+                    x=batch_flow,
+                    y=batch_det,
+                    toa=batch_toas,
+                    flow=batch_flow
                 )
+                total_bboxes = (batch_det[0, :, :, 0] != 0).sum().item()
                 loss_ce = losses['cross_entropy']
-                if isinstance(loss_ce, torch.Tensor) and total_bboxes > 0:
+                if isinstance(loss_ce, torch.Tensor):
                     losses_all.append(loss_ce.mean().item() / total_bboxes)
-                
-                # ─── 每一支影片獨立收集時序分數 ───
-                video_frame_scores = []
+                # losses_all.append(losses['cross_entropy'].mean().item())
                 
                 for t in range(len(all_outputs)):
                     frame = all_outputs[t]
-                    
-                    # 狀況 A：如果這一影格沒有任何偵測物件，分數給 0.0
                     if len(frame) == 0:
-                        video_frame_scores.append(0.0)
                         continue
-                    
-                    frame_obj_scores = []
                     for j in range(len(frame)):
                         score = np.exp(frame[j][:, 1]) / np.sum(np.exp(frame[j]), axis=1)
-                        frame_obj_scores.append(float(score[0]))
-                    
-                    # 💡 Max-Pooling: 擷取這一幀裡面最危險的物件分數，代表這一幀的車禍風險
-                    video_frame_scores.append(max(frame_obj_scores))
-                
-                # 補齊防禦：如果影片長度小於設定的 self.n_frame (150)，自動在尾端補 0.0
-                while len(video_frame_scores) < self.n_frame:
-                    video_frame_scores.append(0.0)
-                # 若大於 150 則裁切，確保所有影片在矩陣中的寬度 T 完美一致
-                video_frame_scores = video_frame_scores[:self.n_frame]
+                        all_pred.append(float(score[0]))
+                        all_labels.append(int(labels[t][j]))
 
-                # ─── 逆向還原影片級 Label 與 t_ai ───
-                # 透過檢查該影片所有節點的 Risk Label 是否有被 Qwen 標註為 1.0
-                video_global_label = 1 if (batch_det[0, :, :, 5] == 1.0).any().item() else 0
-                # 取得來自 .txt 的 t_ai (toa)
-                video_t_ai = float(batch_toas[0].item())
+        loss_val = np.mean(losses_all)
+        fpr, tpr, roc_auc = evaluation(all_pred, all_labels, epoch)
+        plot_auc_curve(fpr, tpr, roc_auc, epoch)
+        ap = plot_pr_curve(all_labels, all_pred, epoch)
 
-                # 塞入全域大清單
-                all_pred_list.append(video_frame_scores)
-                all_labels_list.append(video_global_label)
-                all_toas_list.append(video_t_ai)
+        self.logger.info(f"Epoch [{epoch}] Val Loss: {loss_val:.4f} | AUC: {roc_auc:.4f} | AP: {ap:.4f}")
 
-        # ─── 轉換為對手指定的標準 NumPy 格式 ───
-        all_pred = np.array(all_pred_list, dtype=np.float32)       # Shape: (N, T)
-        all_labels = np.array(all_labels_list, dtype=np.int32)     # Shape: (N,)
-        all_toas = np.array(all_toas_list, dtype=np.float32)       # Shape: (N,)
-
-        loss_val = np.mean(losses_all) if losses_all else 0.0
-
-        # ─── 🛠️ 2. 呼叫對手的 evaluation.py 核心進行無縫評估 ───        
-        # A. 計算早期預警時間 mTTA@0.5
-        mTTA_05 = evaluate_earliness(all_pred, all_labels, all_toas, fps=self.fps, thresh=0.5)
-        
-        # B. 計算官方綜合指標
-        AP, mTTA, TTA_R80 = official_evaluation(all_pred, all_labels, all_toas, fps=self.fps)
-        
-        # C. 計算影片級視角的 v-AUC
-        all_vid_scores = [max(pred[int(toa):]) if len(pred[int(toa):]) > 0 else 0.0 for toa, pred in zip(all_toas, all_pred)]
-        try:
-            v_AUC = roc_auc_score(all_labels, all_vid_scores)
-        except ValueError:
-            v_AUC = 0.0  # 防止測試樣本太少時崩潰
-
-        # ─── 寫入 Log 紀錄 ───
-        self.logger.info(f"Epoch [{epoch}] Val Loss: {loss_val:.4f} | v-AUC: {v_AUC:.4f} | AP: {AP:.4f} | mTTA: {mTTA:.4f} | mTTA@0.5: {mTTA_05:.4f}s | TTA@R80: {TTA_R80:.4f}s")
-
-        # 儲存 CSV 報表
         with open(self.result_csv, 'a+', newline='') as f:
             writer = csv.writer(f)
-            writer.writerow([epoch, loss_val, v_AUC, AP, mTTA, TTA_R80])
+            writer.writerow([epoch, loss_val, roc_auc, ap])
 
-        # 以主流指標 AP 或 v-AUC 作為存檔權重依據
-        if v_AUC > self.auc_max:
-            self.auc_max = v_AUC
+        if roc_auc > self.auc_max:
+            self.auc_max = roc_auc
             best_auc_file = os.path.join(self.output_dir, 'best_auc.pth')
-            torch.save({'epoch': epoch, 'model': self.model.state_dict(), 'optimizer': self.optimizer.state_dict()}, best_auc_file)
+            torch.save({
+                'epoch': epoch,
+                'model': self.model.state_dict(),
+                'optimizer': self.optimizer.state_dict()
+            }, best_auc_file)
             self.logger.info(f"Best AUC Model saved: {best_auc_file}")
-
-        if AP > self.ap_max:
-            self.ap_max = AP
+            
+        if ap > self.ap_max:
+            self.ap_max = ap
             best_ap_file = os.path.join(self.output_dir, 'best_ap.pth')
             torch.save({
                 'epoch': epoch,
@@ -251,6 +206,7 @@ class Train:
                 'optimizer': self.optimizer.state_dict()
             }, best_ap_file)
             self.logger.info(f"Best AP Model saved: {best_ap_file}")
+
         return loss_val
 
     def train(self):

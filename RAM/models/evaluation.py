@@ -6,6 +6,112 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 
+def evaluate_earliness(all_pred, all_labels, time_of_accidents, fps=30.0, thresh=0.5):
+    """Evaluate the earliness for true positive videos"""
+    time = 0.0
+    counter = 0
+    for i in range(len(all_pred)):
+        pred_bins = (all_pred[i] >= thresh).astype(int)
+        inds_pos = np.where(pred_bins > 0)[0]
+        if all_labels[i] > 0 and len(inds_pos) > 0:
+            time += max((time_of_accidents[i] - inds_pos[0]) / fps, 0)
+            counter += 1  
+    mTTA = time / counter if counter > 0 else 0 
+    return mTTA
+
+def official_evaluation(all_pred, all_labels, time_of_accidents, fps=30.0):
+    """
+    對手論文官方評估指標解算器
+    """
+    preds_eval = []
+    min_pred = np.inf
+    n_frames = 0
+    for idx, toa in enumerate(time_of_accidents):
+        if all_labels[idx] > 0:
+            # 確保切片索引不越界
+            slice_idx = min(int(toa), all_pred.shape[1])
+            pred = all_pred[idx, :slice_idx]  
+        else:
+            pred = all_pred[idx, :]  
+        
+        if len(pred) > 0:
+            min_pred = np.min(pred) if min_pred > np.min(pred) else min_pred
+            preds_eval.append(pred)
+            n_frames += len(pred)
+            
+    total_seconds = all_pred.shape[1] / fps
+
+    Precision = np.zeros((n_frames))
+    Recall = np.zeros((n_frames))
+    Time = np.zeros((n_frames))
+    cnt = 0
+    
+    for Th in np.arange(max(min_pred, 0), 1.0, 0.1):
+        Tp = 0.0
+        Tp_Fp = 0.0
+        time = 0.0
+        counter = 0.0  
+        for i in range(len(preds_eval)):
+            if i >= len(all_labels): continue
+            tp = np.where(preds_eval[i] * all_labels[i] >= Th)
+            Tp += float(len(tp[0]) > 0)
+            if float(len(tp[0]) > 0) > 0 and time_of_accidents[i] > 0:
+                time += tp[0][0] / float(time_of_accidents[i])
+                counter = counter + 1
+            Tp_Fp += float(len(np.where(preds_eval[i] >= Th)[0]) > 0)
+            
+        if Tp_Fp == 0:  
+            continue
+        else:
+            Precision[cnt] = Tp / Tp_Fp
+        if np.sum(all_labels) == 0: 
+            continue
+        else:
+            Recall[cnt] = Tp / np.sum(all_labels)
+        if counter == 0:
+            continue
+        else:
+            Time[cnt] = (1 - time / counter)
+        cnt += 1
+        
+    # 限幅防禦
+    Precision = Precision[:cnt]
+    Recall = Recall[:cnt]
+    Time = Time[:cnt]
+
+    new_index = np.argsort(Recall)
+    Precision = Precision[new_index]
+    Recall = Recall[new_index]
+    Time = Time[new_index]
+    
+    _, rep_index = np.unique(Recall, return_index=True)
+    if len(rep_index) <= 1:
+        return 0.0, 0.0, 0.0
+        
+    rep_index = rep_index[1:]
+    new_Time = np.zeros(len(rep_index))
+    new_Precision = np.zeros(len(rep_index))
+    
+    for i in range(len(rep_index) - 1):
+        new_Time[i] = np.max(Time[rep_index[i]:rep_index[i+1]])
+        new_Precision[i] = np.max(Precision[rep_index[i]:rep_index[i+1]])
+        
+    new_Time[-1] = Time[rep_index[-1]]
+    new_Precision[-1] = Precision[rep_index[-1]]
+    new_Recall = Recall[rep_index]
+    
+    AP = 0.0
+    if new_Recall[0] != 0:
+        AP += new_Precision[0] * (new_Recall[0] - 0)
+    for i in range(1, len(new_Precision)):
+        AP += (new_Precision[i-1] + new_Precision[i]) * (new_Recall[i] - new_Recall[i-1]) / 2
+
+    mTTA = np.mean(new_Time) * total_seconds
+    sort_time = new_Time[np.argsort(new_Recall)]
+    sort_recall = np.sort(new_Recall)
+    TTA_R80 = sort_time[np.argmin(np.abs(sort_recall - 0.8))] * total_seconds
+
+    return AP, mTTA, TTA_R80
 
 def evaluation(all_pred, all_labels, epoch):
     fpr, tpr, thresholds = metrics.roc_curve(np.array(all_labels), np.array(all_pred), pos_label=1)

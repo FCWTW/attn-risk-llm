@@ -3,7 +3,7 @@ model_params:
   x_dim: 2048
 
 train_params:
-  strategy: mini  # full or mini
+  strategy: full  # full or mini
   epoch: 22
   batch_size: 1
   lr: 0.0001
