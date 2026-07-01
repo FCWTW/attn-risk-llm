@@ -1,0 +1,96 @@
+2026-06-30 23:01:01,167 [INFO] Config File: ./config/RAM.yaml | Output Dir : /home/wayne/Desktop/Thesis_code/RAM/result | Learning Rate: 0.001
+2026-06-30 23:11:10,176 [INFO] Epoch [0] Train Loss: 38.1171 | LR: 0.001
+2026-06-30 23:12:10,565 [INFO] Epoch [0] Val Loss: 30.0079 | AUC: 0.7025 | AP: 0.0725
+2026-06-30 23:12:10,580 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-06-30 23:12:10,592 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-06-30 23:22:24,527 [INFO] Epoch [1] Train Loss: 38.0905 | LR: 0.001
+2026-06-30 23:23:22,981 [INFO] Epoch [1] Val Loss: 36.4757 | AUC: 0.7056 | AP: 0.0739
+2026-06-30 23:23:23,004 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-06-30 23:23:23,021 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-06-30 23:33:31,790 [INFO] Epoch [2] Train Loss: 37.5411 | LR: 0.001
+2026-06-30 23:34:30,765 [INFO] Epoch [2] Val Loss: 34.5934 | AUC: 0.7086 | AP: 0.0652
+2026-06-30 23:34:30,789 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-06-30 23:44:41,285 [INFO] Epoch [3] Train Loss: 37.3553 | LR: 0.001
+2026-06-30 23:45:39,910 [INFO] Epoch [3] Val Loss: 31.4670 | AUC: 0.7153 | AP: 0.0712
+2026-06-30 23:45:39,934 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-06-30 23:55:49,960 [INFO] Epoch [4] Train Loss: 37.9838 | LR: 0.001
+2026-06-30 23:56:48,730 [INFO] Epoch [4] Val Loss: 29.2693 | AUC: 0.7120 | AP: 0.0574
+2026-07-01 00:06:57,988 [INFO] Epoch [5] Train Loss: 37.4416 | LR: 0.001
+2026-07-01 00:07:56,723 [INFO] Epoch [5] Val Loss: 37.7299 | AUC: 0.7024 | AP: 0.0609
+2026-07-01 00:18:06,611 [INFO] Epoch [6] Train Loss: 37.3327 | LR: 0.001
+2026-07-01 00:19:05,024 [INFO] Epoch [6] Val Loss: 34.6360 | AUC: 0.7056 | AP: 0.0678
+2026-07-01 00:29:13,852 [INFO] Epoch [7] Train Loss: nan | LR: 0.001
+2026-07-01 08:43:51,850 [INFO] Config File: ./config/RAM.yaml | Output Dir : /home/wayne/Desktop/Thesis_code/RAM/result | Learning Rate: 0.0003
+2026-07-01 08:53:58,676 [INFO] Epoch [0] Train Loss: 0.1823 | LR: 0.0003
+2026-07-01 08:54:57,709 [INFO] Epoch [0] Val Loss: 0.2056 | AUC: 0.6732 | AP: 0.0718
+2026-07-01 08:54:57,727 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-07-01 08:54:57,741 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 09:04:52,747 [INFO] Epoch [1] Train Loss: 0.1745 | LR: 0.0003
+2026-07-01 09:05:50,308 [INFO] Epoch [1] Val Loss: 0.1999 | AUC: 0.6859 | AP: 0.0672
+2026-07-01 09:05:50,325 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-07-01 09:15:38,108 [INFO] Epoch [2] Train Loss: 0.1694 | LR: 0.0003
+2026-07-01 09:16:35,556 [INFO] Epoch [2] Val Loss: 0.1974 | AUC: 0.6813 | AP: 0.0826
+2026-07-01 09:16:35,579 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 09:26:23,575 [INFO] Epoch [3] Train Loss: 0.1678 | LR: 0.0003
+2026-07-01 09:27:21,202 [INFO] Epoch [3] Val Loss: 0.1998 | AUC: 0.6819 | AP: 0.0822
+2026-07-01 09:37:09,578 [INFO] Epoch [4] Train Loss: 0.1623 | LR: 0.0003
+2026-07-01 09:38:07,360 [INFO] Epoch [4] Val Loss: 0.2046 | AUC: 0.6772 | AP: 0.0573
+2026-07-01 09:47:56,131 [INFO] Epoch [5] Train Loss: 0.1544 | LR: 0.0003
+2026-07-01 09:48:53,727 [INFO] Epoch [5] Val Loss: 0.2054 | AUC: 0.6837 | AP: 0.0692
+2026-07-01 09:58:41,950 [INFO] Epoch [6] Train Loss: 0.1461 | LR: 0.0003
+2026-07-01 09:59:39,608 [INFO] Epoch [6] Val Loss: 0.2060 | AUC: 0.6727 | AP: 0.0605
+2026-07-01 10:09:27,889 [INFO] Epoch [7] Train Loss: 0.1390 | LR: 0.0003
+2026-07-01 10:10:25,339 [INFO] Epoch [7] Val Loss: 0.2803 | AUC: 0.6583 | AP: 0.0487
+2026-07-01 10:20:13,340 [INFO] Epoch [8] Train Loss: 0.1318 | LR: 0.0003
+2026-07-01 10:21:10,756 [INFO] Epoch [8] Val Loss: 0.2157 | AUC: 0.6831 | AP: 0.0516
+2026-07-01 10:30:59,026 [INFO] Epoch [9] Train Loss: 0.1164 | LR: 0.00015
+2026-07-01 10:31:57,110 [INFO] Epoch [9] Val Loss: 0.2518 | AUC: 0.6789 | AP: 0.0470
+2026-07-01 10:41:45,520 [INFO] Epoch [10] Train Loss: 0.1083 | LR: 0.00015
+2026-07-01 10:42:43,204 [INFO] Epoch [10] Val Loss: 0.3244 | AUC: 0.6366 | AP: 0.0470
+2026-07-01 14:18:59,022 [INFO] Config File: ./config/RAM.yaml | Output Dir : /home/wayne/Desktop/Thesis_code/RAM/result | Learning Rate: 0.0001
+No dropout, loss weight=[0.25, 1].
+2026-07-01 14:29:21,955 [INFO] Epoch [0] Train Loss: 0.1808 | LR: 0.0001
+2026-07-01 14:30:21,149 [INFO] Epoch [0] Val Loss: 0.2066 | AUC: 0.6710 | AP: 0.0767
+2026-07-01 14:30:21,168 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-07-01 14:30:21,185 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 14:40:40,374 [INFO] Epoch [1] Train Loss: 0.1728 | LR: 0.0001
+2026-07-01 14:41:40,034 [INFO] Epoch [1] Val Loss: 0.2055 | AUC: 0.6631 | AP: 0.0772
+2026-07-01 14:41:40,056 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 14:52:02,690 [INFO] Epoch [2] Train Loss: 0.1690 | LR: 0.0001
+2026-07-01 14:53:03,186 [INFO] Epoch [2] Val Loss: 0.2002 | AUC: 0.6716 | AP: 0.0835
+2026-07-01 14:53:03,203 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-07-01 14:53:03,218 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 15:03:17,434 [INFO] Epoch [3] Train Loss: 0.1659 | LR: 0.0001
+2026-07-01 15:04:16,693 [INFO] Epoch [3] Val Loss: 0.2017 | AUC: 0.6695 | AP: 0.0684
+2026-07-01 15:14:34,863 [INFO] Epoch [4] Train Loss: 0.1575 | LR: 0.0001
+2026-07-01 15:15:35,543 [INFO] Epoch [4] Val Loss: 0.2135 | AUC: 0.6595 | AP: 0.1117
+2026-07-01 15:15:35,559 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 15:25:56,681 [INFO] Epoch [5] Train Loss: 0.1484 | LR: 0.0001
+2026-07-01 15:26:56,412 [INFO] Epoch [5] Val Loss: 0.2121 | AUC: 0.6607 | AP: 0.0913
+2026-07-01 15:37:56,609 [INFO] Config File: ./config/RAM.yaml | Output Dir : /home/wayne/Desktop/Thesis_code/RAM/result | Learning Rate: 0.0001
+dropout=[0.5, 0.5], loss weight=[0.1, 1]
+2026-07-01 15:48:34,997 [INFO] Epoch [0] Train Loss: 0.1867 | LR: 0.0001
+2026-07-01 15:49:37,452 [INFO] Epoch [0] Val Loss: 0.2138 | AUC: 0.6420 | AP: 0.0390
+2026-07-01 15:49:37,470 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-07-01 15:49:37,487 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 16:00:16,884 [INFO] Epoch [1] Train Loss: 0.1777 | LR: 0.0001
+2026-07-01 16:01:18,908 [INFO] Epoch [1] Val Loss: 0.2134 | AUC: 0.6886 | AP: 0.0493
+2026-07-01 16:01:18,926 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-07-01 16:01:18,941 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 16:11:55,551 [INFO] Epoch [2] Train Loss: 0.1728 | LR: 0.0001
+2026-07-01 16:12:56,862 [INFO] Epoch [2] Val Loss: 0.2041 | AUC: 0.6664 | AP: 0.0570
+2026-07-01 16:12:56,878 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 16:23:32,453 [INFO] Epoch [3] Train Loss: 0.1678 | LR: 0.0001
+2026-07-01 16:24:34,025 [INFO] Epoch [3] Val Loss: 0.2056 | AUC: 0.6623 | AP: 0.0567
+2026-07-01 16:25:29,165 [INFO] Config File: ./config/RAM.yaml | Output Dir : /home/wayne/Desktop/Thesis_code/RAM/result | Learning Rate: 0.0001
+dropout=[0.5, 0.5], loss weight=[0.5, 1]
+2026-07-01 16:36:10,346 [INFO] Epoch [0] Train Loss: 0.1870 | LR: 0.0001
+2026-07-01 16:37:12,211 [INFO] Epoch [0] Val Loss: 0.2116 | AUC: 0.6415 | AP: 0.0414
+2026-07-01 16:37:12,227 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-07-01 16:37:12,239 [INFO] Best AP Model saved: ./result/best_ap.pth
+2026-07-01 16:47:45,161 [INFO] Epoch [1] Train Loss: 0.1781 | LR: 0.0001
+2026-07-01 16:48:47,946 [INFO] Epoch [1] Val Loss: 0.2106 | AUC: 0.6120 | AP: 0.0362
+2026-07-01 16:59:24,026 [INFO] Epoch [2] Train Loss: 0.1740 | LR: 0.0001
+2026-07-01 17:00:25,800 [INFO] Epoch [2] Val Loss: 0.2058 | AUC: 0.6627 | AP: 0.0571
+2026-07-01 17:00:25,818 [INFO] Best AUC Model saved: ./result/best_auc.pth
+2026-07-01 17:00:25,834 [INFO] Best AP Model saved: ./result/best_ap.pth

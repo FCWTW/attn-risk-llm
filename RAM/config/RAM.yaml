@@ -3,10 +3,10 @@ model_params:
   x_dim: 2048
 
 train_params:
-  strategy: full  # full or mini
-  no_epochs: 22
+  strategy: mini  # full or mini
+  epoch: 22
   batch_size: 1
-  lr: 0.001
+  lr: 0.0001
   resume: False
   ckpt_file: None
   tl: False
@@ -17,5 +17,5 @@ train_params:
 
 test_params:
   strategy: full  # full or mini
-  batch_size: 2
+  batch_size: 1
   no_workers: 8

@@ -10,6 +10,7 @@ from torch.autograd import Variable
 import torch.nn.functional as F
 import numpy as np
 import sys
+from torch.autograd import Variable
 
 
 class GRUNet(nn.Module):
@@ -17,7 +18,7 @@ class GRUNet(nn.Module):
         super(GRUNet, self).__init__()
         self.hidden_dim = hidden_dim
         self.n_layers = n_layers
-        self.dropout = [0, 0]
+        self.dropout = [0.5, 0.5]
         self.output_cor_dim = output_cor_dim
         self.gru = nn.GRU(input_dim, hidden_dim, n_layers, batch_first=True)
         for name, param in self.gru.named_parameters():
@@ -135,7 +136,7 @@ class RiskyObject(nn.Module):
         self.n_layers_cor = 1
         self.h_dim_cor = 32
         self.gru_net = GRUNet(h_dim+h_dim, h_dim, 2, self.n_layers, self.h_dim_cor)
-        self.weight = torch.Tensor([0.25, 1]).cuda()  # TO-DO: find the correct weight
+        self.weight = torch.Tensor([0.5, 1]).cuda()  # TO-DO: find the correct weight
 
         # input dim 4
         self.gru_net_cor = CorGRU(4, self.h_dim_cor, self.n_layers_cor)
@@ -275,6 +276,154 @@ class RiskyObject(nn.Module):
 
         return losses, all_outputs, all_labels
 
+class RiskyObject_v2(nn.Module):
+    def __init__(self, x_dim, h_dim, n_frames=100, fps=20.0):
+        super(RiskyObject_v2, self).__init__()  # 修正了原始代碼中的類別名稱錯位
+
+        self.x_dim = x_dim
+        self.h_dim = h_dim
+        self.fps = fps
+        self.n_frames = n_frames
+        self.n_layers = 2
+        self.phi_x = nn.Sequential(nn.Linear(x_dim, h_dim), nn.ReLU())  # rgb
+
+        # 🔥 修改點 1：因為加入了 1 維的 Saliency_Prior，主 GRU 的輸入維度由 512 變更為 513
+        self.gru_net = GRUNet(h_dim + h_dim + 1, h_dim, 2, self.n_layers, self.h_dim_cor)
+        self.weight = torch.Tensor([0.5, 1]).cuda()  
+
+        # input dim 4
+        self.gru_net_cor = CorGRU(4, self.h_dim_cor, self.n_layers_cor)
+        self.soft_attention = SpatialAttention(h_dim)
+        self.soft_attention_cor = SpatialAttention(self.h_dim_cor)
+        self.ce_loss = torch.nn.CrossEntropyLoss(weight=self.weight, reduction='mean')
+
+    def forward(self, x, y, toa, flow, hidden_in=None, testing=False):
+        """
+        :param x (batchsize, nFrames, 1+maxBox, Xdim) -> 借用為元數據
+        :param y (batchsize, nFrames, maxBox, 7)    -> [Track_ID, x1, y1, x2, y2, Risk_Label, Saliency_Prior]
+        :toa (batchsize, 1)
+        :batchsize = 1
+        """
+        losses = {'cross_entropy': 0}
+        h = Variable(torch.zeros(self.n_layers, x.size(0),  self.h_dim))
+        h = h.to(x.device)
+        h_all_in = {}
+        h_all_out = {}
+
+        h_all_in_cor = {}
+        h_all_out_cor = {}
+
+        all_outputs = []
+        all_labels = []
+
+        for t in range(x.size(1)):
+            inp = flow[:, t]  # 1 x 31 x 2048
+
+            # Flow----------------
+            x_val = self.phi_x(inp)  # 1 x 31 x 256
+            img_embed = x_val[:, 0, :].unsqueeze(1)  # 1 x 1 x 256
+            img_embed = img_embed.repeat(1, 30, 1)  # 1 x 30 x 256
+            obj_embed = x_val[:, 1:, :]   # 1 x 30 x 256
+            x_t = torch.cat([obj_embed, img_embed], dim=-1)  # 1 x 30 x 512
+
+            h_all_out = {}
+            h_all_out_cor = {}
+            h_all_out_flow = {}
+            frame_outputs = []
+            frame_labels = []
+            
+            for bbox in range(30):
+                if y[0][t][bbox][0] == 0:  # ignore if there is no bounding box
+                    continue
+                else:
+                    track_id = str(y[0][t][bbox][0].cpu().detach().numpy())
+                    if track_id in h_all_in:
+
+                        # secondary GRU-----------------------------------
+                        unnormalized_cor = y[0][t][bbox]  
+                        norm_cor = torch.Tensor([unnormalized_cor[1]/1080, unnormalized_cor[2]/720, unnormalized_cor[3]/1080, unnormalized_cor[4]/720])  
+
+                        norm_cor = torch.unsqueeze(norm_cor, 0)
+                        norm_cor = torch.unsqueeze(norm_cor, 0)
+                        norm_cor = norm_cor.to(x.device)
+
+                        h_in_cor = h_all_in_cor[track_id]
+                        output_cor, h_out_cor = self.gru_net_cor(norm_cor, h_in_cor)
+
+                        h_all_out_cor[track_id] = h_out_cor
+
+                        # base GRU---------------------------------------
+                        h_in = h_all_in[track_id]  
+
+                        x_obj = x_t[0][bbox]  
+                        x_obj = torch.unsqueeze(x_obj, 0)  # 1 x 512
+                        x_obj = torch.unsqueeze(x_obj, 0)  # 1 x 1 x 512
+
+                        # 🔥 修改點 2-A：在既有軌跡分支中，切出第 7 欄先驗純量，對齊維度並執行 Early Fusion
+                        s_prior = y[0][t][bbox][6].view(1, 1, 1).to(x.device)
+                        x_obj = torch.cat([x_obj, s_prior], dim=-1)  # 1 x 1 x 513
+
+                        output, h_out = self.gru_net(x_obj, h_in, output_cor)  
+                        
+                        target = y[0][t][bbox][5].to(torch.long)
+                        target = torch.as_tensor([target], device=torch.device('cuda'))
+
+                        loss = self.ce_loss(output, target)
+                        losses['cross_entropy'] += loss
+                        frame_outputs.append(output.detach().cpu().numpy())
+                        frame_labels.append(y[0][t][bbox][5].detach().cpu().numpy())
+                        h_all_out[track_id] = h_out  
+
+                    else:  # If object was not found in the previous frame
+
+                        # secondary GRU --------------------------------------
+                        unnormalized_cor = y[0][t][bbox]  
+                        norm_cor = torch.Tensor([unnormalized_cor[1]/1080, unnormalized_cor[2]/720, unnormalized_cor[3]/1080, unnormalized_cor[4]/720])  
+
+                        norm_cor = torch.unsqueeze(norm_cor, 0)
+                        norm_cor = torch.unsqueeze(norm_cor, 0)
+                        norm_cor = norm_cor.to(x.device)
+
+                        h_in_cor = Variable(torch.zeros(self.n_layers_cor, x.size(0),  self.h_dim_cor))
+                        h_in_cor = h_in_cor.to(x.device)
+
+                        output_cor, h_out_cor = self.gru_net_cor(norm_cor, h_in_cor)
+                        
+                        # Base GRU------------------------------------------
+                        h_in = Variable(torch.zeros(self.n_layers, x.size(0),  self.h_dim))  
+                        h_in = h_in.to(x.device)
+                        
+                        x_obj = x_t[0][bbox]  # 512
+                        x_obj = torch.unsqueeze(x_obj, 0)  # 1 x 512
+                        x_obj = torch.unsqueeze(x_obj, 0)  # 1 x 1 x 512
+
+                        # 🔥 修改點 2-B：在新出現物件分支中，同步切出第 7 欄先驗純量並執行 Early Fusion
+                        s_prior = y[0][t][bbox][6].view(1, 1, 1).to(x.device)
+                        x_obj = torch.cat([x_obj, s_prior], dim=-1)  # 1 x 1 x 513
+
+                        output, h_out = self.gru_net(x_obj, h_in, output_cor)  
+                        
+                        target = y[0][t][bbox][5].to(torch.long)
+                        target = torch.as_tensor([target], device=torch.device('cuda'))
+                        loss = self.ce_loss(output, target)
+                        losses['cross_entropy'] += loss
+                        frame_outputs.append(output.detach().cpu().numpy())
+                        frame_labels.append(y[0][t][bbox][5].detach().cpu().numpy())
+                        h_all_out[track_id] = h_out  
+                        h_all_out_cor[track_id] = h_out_cor
+
+            all_outputs.append(frame_outputs)
+            all_labels.append(frame_labels)
+            h_all_in = {}
+            h_all_in = h_all_out.copy()
+
+            h_all_in = self.soft_attention(h_all_in)
+
+            h_all_in_cor = {}
+            h_all_in_cor = h_all_out_cor.copy()
+            h_all_in_cor = self.soft_attention_cor(h_all_in_cor)
+
+        return losses, all_outputs, all_labels
 
 if __name__ == '__main__':
     # 檢查是否支援 CUDA，因為模型代碼中強制使用了 .cuda()

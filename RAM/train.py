@@ -68,9 +68,17 @@ class Train:
 
         print('-> Building model...')
         self.model = RiskyObject(self.x_dim, self.h_dim, self.n_frame, self.fps) 
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.train_params['lr'])
+        # self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.train_params['lr'])
+        self.optimizer = torch.optim.Adam(
+            self.model.parameters(), 
+            lr=self.train_params['lr'],
+            weight_decay=1e-4
+        )
         self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-            self.optimizer, mode='min', factor=0.5, patience=5
+            self.optimizer,
+            mode='min',
+            factor=0.5,
+            patience=2
         )   
         self.model = self.model.to(device=self.device)    
         
@@ -117,11 +125,17 @@ class Train:
                 toa=batch_toas,
                 flow=batch_flow
             )
+            total_bboxes = (batch_det[0, :, :, 0] != 0).sum().item()
 
-            loss = losses['cross_entropy'].mean()
+            loss_ce = losses['cross_entropy']
+            if not isinstance(loss_ce, torch.Tensor):
+                # This indicates that this clip does not contain any tracked objects; skip this training round.
+                continue
+            loss = loss_ce.mean()
+            loss = loss / total_bboxes
             loss.backward()
             
-            torch.nn.utils.clip_grad_norm_(self.model.parameters(), 10)
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), 5)
             self.optimizer.step()
             
             epoch_losses.append(loss.item())
@@ -137,16 +151,21 @@ class Train:
         losses_all = []
         all_pred = []
         all_labels = []
+        loop = tqdm(enumerate(self.val_dataloader), total=len(self.val_dataloader), desc=f"Epoch [{epoch}/{self.train_params['epoch']}]")
 
         with torch.no_grad():
-            for i, (batch_det, batch_toas, batch_flow, batch_vid) in enumerate(self.val_dataloader):
-                losses, all_outputs, all_labels = self.model(
+            for i, (batch_det, batch_toas, batch_flow, batch_vid) in loop:
+                losses, all_outputs, labels = self.model(
                     x=batch_flow,
                     y=batch_det,
                     toa=batch_toas,
                     flow=batch_flow
                 )
-                losses_all.append(losses['cross_entropy'].mean().item())
+                total_bboxes = (batch_det[0, :, :, 0] != 0).sum().item()
+                loss_ce = losses['cross_entropy']
+                if isinstance(loss_ce, torch.Tensor):
+                    losses_all.append(loss_ce.mean().item() / total_bboxes)
+                # losses_all.append(losses['cross_entropy'].mean().item())
                 
                 for t in range(len(all_outputs)):
                     frame = all_outputs[t]
@@ -154,8 +173,8 @@ class Train:
                         continue
                     for j in range(len(frame)):
                         score = np.exp(frame[j][:, 1]) / np.sum(np.exp(frame[j]), axis=1)
-                        all_pred.append(score)
-                        all_labels.append(all_labels[t][j] + 0)
+                        all_pred.append(float(score[0]))
+                        all_labels.append(int(labels[t][j]))
 
         loss_val = np.mean(losses_all)
         fpr, tpr, roc_auc = evaluation(all_pred, all_labels, epoch)
@@ -168,15 +187,6 @@ class Train:
             writer = csv.writer(f)
             writer.writerow([epoch, loss_val, roc_auc, ap])
 
-        # Save regular checkpoint
-        # model_file = os.path.join(self.output_dir, f'model_{epoch:02d}.pth')
-        # torch.save({
-        #     'epoch': epoch,
-        #     'model': self.model.state_dict(),
-        #     'optimizer': self.optimizer.state_dict()
-        # }, model_file)
-
-        # Save best models
         if roc_auc > self.auc_max:
             self.auc_max = roc_auc
             best_auc_file = os.path.join(self.output_dir, 'best_auc.pth')
@@ -185,7 +195,7 @@ class Train:
                 'model': self.model.state_dict(),
                 'optimizer': self.optimizer.state_dict()
             }, best_auc_file)
-            self.logger.info(f"-> Best AUC Model saved: {best_auc_file}")
+            self.logger.info(f"Best AUC Model saved: {best_auc_file}")
             
         if ap > self.ap_max:
             self.ap_max = ap
@@ -195,7 +205,7 @@ class Train:
                 'model': self.model.state_dict(),
                 'optimizer': self.optimizer.state_dict()
             }, best_ap_file)
-            self.logger.info(f"-> Best AP Model saved: {best_ap_file}")
+            self.logger.info(f"Best AP Model saved: {best_ap_file}")
 
         return loss_val
 

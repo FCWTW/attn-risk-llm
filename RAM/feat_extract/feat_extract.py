@@ -27,7 +27,7 @@ def log_information(vid_id, frame_id, track_id, e, configs_dir):
     logger.setLevel(logging.INFO)
     log_path = os.path.join(configs_dir, 'Feature_Extraction_Error.log')
     
-    if not logger.hasHandlers():
+    if not logger.handlers:
         file_handler = logging.FileHandler(log_path)
         formatter = logging.Formatter('%(asctime)s:%(levelname)s:%(message)s')
         file_handler.setFormatter(formatter)
@@ -107,8 +107,10 @@ def process_features(root_dir, flow_root_dir, configs_dir):
             if rgb_path is None or flow_path is None:
                 continue
 
-            rgb_img = Image.open(rgb_path).convert("RGB")
-            flow_img = Image.open(flow_path).convert("RGB")
+            with Image.open(rgb_path) as img:
+                rgb_img = img.convert("RGB")
+            with Image.open(flow_path) as img:
+                flow_img = img.convert("RGB")
             W_flow, H_flow = flow_img.size
             W_rgb, H_rgb = rgb_img.size
             
